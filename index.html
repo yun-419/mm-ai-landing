@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>財經M平方 × AI｜新紀元啟動</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal:    #00D4B4;
+      --teal2:   #4EECD4;
+      --gold:    #C9923A;
+      --gold2:   #E5A84A;
+      --bg:      #050B18;
+      --bg2:     #0A1628;
+      --bg3:     #0D1E35;
+      --text:    #FFFFFF;
+      --muted:   #8892A4;
+      --border:  rgba(0,212,180,0.18);
+      --glow:    0 0 40px rgba(0,212,180,0.25);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Noto Sans TC', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 60px;
+      background: rgba(5,11,24,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; }
+    .nav-logo svg { width: 32px; height: 32px; }
+    .nav-cta {
+      background: var(--teal); color: #050B18;
+      padding: 9px 24px; border-radius: 8px;
+      font-weight: 700; font-size: 14px;
+      text-decoration: none; transition: opacity .2s;
+    }
+    .nav-cta:hover { opacity: .85; }
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 60%, rgba(0,212,180,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 30% at 20% 80%, rgba(0,180,255,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(0,212,180,0.1);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 18px; font-size: 13px; color: var(--teal);
+      margin-bottom: 28px; letter-spacing: .05em;
+    }
+    .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+    .hero h1 {
+      font-size: clamp(40px, 7vw, 80px);
+      font-weight: 900; line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .hero h1 em { color: var(--teal); font-style: normal; }
+    .hero p.sub {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--muted); max-width: 640px;
+      margin: 0 auto 48px;
+    }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+    .btn-primary {
+      background: var(--teal); color: #050B18;
+      padding: 14px 36px; border-radius: 10px;
+      font-weight: 700; font-size: 16px;
+      text-decoration: none; transition: all .2s;
+      box-shadow: 0 4px 24px rgba(0,212,180,.35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,212,180,.45); }
+    .btn-ghost {
+      background: transparent; color: var(--text);
+      padding: 14px 36px; border-radius: 10px;
+      font-weight: 500; font-size: 16px;
+      text-decoration: none; border: 1px solid rgba(255,255,255,0.2);
+      transition: all .2s;
+    }
+    .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+    .stats-row {
+      margin-top: 64px;
+      display: flex; gap: 40px; flex-wrap: wrap; justify-content: center;
+    }
+    .stat { text-align: center; }
+    .stat strong { display: block; font-size: clamp(28px, 4vw, 44px); font-weight: 900; color: var(--teal); }
+    .stat span { font-size: 13px; color: var(--muted); }
+    /* ── SECTION COMMON ── */
+    section { padding: 100px 24px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      display: inline-block;
+      font-size: 12px; letter-spacing: .15em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 900; line-height: 1.2; margin-bottom: 20px;
+    }
+    .section-title em { color: var(--teal); font-style: normal; }
+    .section-desc { font-size: 17px; color: var(--muted); max-width: 600px; line-height: 1.8; }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+    /* ── WHY ── */
+    .why { background: var(--bg2); }
+    .why .container { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .why-visual {
+      position: relative; border-radius: 20px;
+      background: var(--bg3); border: 1px solid var(--border);
+      padding: 40px; box-shadow: var(--glow);
+    }
+    .problem-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px; padding: 20px 24px;
+      margin-bottom: 16px; position: relative;
+    }
+    .problem-card::after {
+      content: '過去';
+      position: absolute; top: -10px; right: 16px;
+      font-size: 11px; color: var(--muted); background: var(--bg3); padding: 0 8px;
+    }
+    .problem-card p { color: var(--muted); font-size: 15px; }
+    .arrow-down { text-align: center; font-size: 24px; color: var(--teal); margin: 16px 0; }
+    .solution-card {
+      background: rgba(0,212,180,0.08);
+      border: 1px solid rgba(0,212,180,0.3);
+      border-radius: 12px; padding: 20px 24px;
+      position: relative;
+    }
+    .solution-card::after {
+      content: '現在';
+      position: absolute; top: -10px; right: 16px;
+      font-size: 11px; color: var(--teal); background: var(--bg3); padding: 0 8px;
+    }
+    .solution-card p { color: var(--text); font-size: 15px; font-weight: 500; }
+    /* ── HOW ── */
+    .how { background: var(--bg); }
+    .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 60px; }
+    .feature-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 20px; padding: 40px;
+      transition: transform .3s, box-shadow .3s;
+      position: relative; overflow: hidden;
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--teal), transparent);
+    }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: var(--glow); }
+    .feature-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: rgba(0,212,180,0.1); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin-bottom: 24px;
+    }
+    .feature-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+    .feature-card p { color: var(--muted); font-size: 15px; line-height: 1.8; margin-bottom: 24px; }
+    .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      font-size: 12px; padding: 4px 12px; border-radius: 100px;
+      background: rgba(0,212,180,0.08); border: 1px solid var(--border); color: var(--teal2);
+    }
+    .widget-preview {
+      margin-top: 28px; background: var(--bg2);
+      border: 1px solid var(--border); border-radius: 12px; padding: 16px;
+    }
+    .widget-row { display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+    .widget-item {
+      flex: 1; min-width: 80px; background: rgba(0,212,180,0.06);
+      border: 1px solid var(--border); border-radius: 8px;
+      padding: 8px 12px; font-size: 11px; color: var(--muted); text-align: center;
+    }
+    .widget-item.ai { border-color: rgba(0,212,180,0.4); color: var(--teal); }
+    .widget-item.decision { border-color: rgba(100,180,255,0.4); color: #64B4FF; }
+    /* ── OFFER / PRICING ── */
+    .offer { background: var(--bg2); }
+    .offer .container { text-align: center; }
+    .offer .section-desc { margin: 0 auto; }
+    .countdown-wrap {
+      display: flex; justify-content: center; gap: 24px;
+      margin: 40px 0; flex-wrap: wrap;
+    }
+    .countdown-box {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 16px; padding: 24px 32px; min-width: 100px;
+      box-shadow: var(--glow);
+    }
+    .countdown-box strong { display: block; font-size: 48px; font-weight: 900; color: var(--teal); line-height: 1; }
+    .countdown-box span { font-size: 12px; color: var(--muted); letter-spacing: .1em; text-transform: uppercase; }
+    .pricing-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; max-width: 720px; margin-left: auto; margin-right: auto; }
+    .pricing-card {
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 20px; padding: 36px; text-align: left;
+    }
+    .pricing-card.highlight {
+      border-color: var(--teal);
+      box-shadow: 0 0 40px rgba(0,212,180,0.2);
+      position: relative;
+    }
+    .pricing-card.highlight::before {
+      content: '限時優惠';
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--teal); color: #050B18;
+      font-size: 12px; font-weight: 700; padding: 4px 16px; border-radius: 100px;
+    }
+    .pricing-label { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+    .pricing-price { font-size: 42px; font-weight: 900; color: var(--teal); line-height: 1; }
+    .pricing-price sup { font-size: 18px; vertical-align: super; }
+    .pricing-price span { font-size: 14px; color: var(--muted); font-weight: 400; }
+    .pricing-future { font-size: 14px; color: var(--muted); margin-top: 8px; text-decoration: line-through; }
+    .pricing-desc { font-size: 14px; color: var(--muted); margin-top: 16px; line-height: 1.7; }
+    .pricing-features { list-style: none; margin-top: 20px; }
+    .pricing-features li {
+      font-size: 14px; padding: 7px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      display: flex; align-items: center; gap: 8px; color: var(--muted);
+    }
+    .pricing-features li::before { content: '✓'; color: var(--teal); font-weight: 700; }
+    .offer-cta { margin-top: 48px; }
+    .offer-cta .btn-primary { font-size: 18px; padding: 18px 52px; }
+    .offer-note { margin-top: 16px; font-size: 13px; color: var(--muted); }
+    /* ── MANIFESTO ── */
+    .manifesto {
+      background: var(--bg);
+      text-align: center; padding: 120px 24px;
+      position: relative; overflow: hidden;
+    }
+    .manifesto::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0,212,180,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .manifesto blockquote {
+      font-size: clamp(20px, 3vw, 32px);
+      font-weight: 500; line-height: 1.7;
+      max-width: 860px; margin: 0 auto;
+      color: rgba(255,255,255,0.85);
+    }
+    .manifesto blockquote em { color: var(--teal); font-style: normal; font-weight: 700; }
+    .manifesto cite { display: block; margin-top: 32px; font-size: 14px; color: var(--muted); font-style: normal; }
+
+    /* ── TIMELINE SECTION ── */
+    .timeline-section {
+      background: #050B18;
+      padding: 100px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .timeline-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(0,212,180,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .timeline-section .section-label { margin-bottom: 16px; }
+    .timeline-section h2 {
+      font-size: clamp(30px, 5vw, 56px);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .timeline-section h2 em { color: var(--teal); font-style: normal; }
+    .timeline-section .subtitle {
+      font-size: clamp(14px, 1.6vw, 18px);
+      color: var(--muted);
+      margin-bottom: 80px;
+    }
+    /* Timeline track */
+    .timeline-track {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 0;
+      max-width: 860px;
+      margin: 0 auto;
+      padding-top: 20px;
+    }
+    /* Horizontal line */
+    .timeline-track::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: rgba(255,255,255,0.15);
+      z-index: 0;
+    }
+    .timeline-node {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .timeline-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .timeline-dot.teal {
+      background: var(--teal);
+      box-shadow: 0 0 16px rgba(0,212,180,0.6);
+    }
+    .timeline-dot.gold {
+      background: var(--gold2);
+      box-shadow: 0 0 16px rgba(201,146,58,0.6);
+    }
+    .timeline-dot.teal::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(0,212,180,0.35);
+    }
+    .timeline-dot.gold::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(229,168,74,0.35);
+    }
+    .timeline-year {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .timeline-year.teal { color: var(--teal); }
+    .timeline-year.gold { color: var(--gold2); }
+    .timeline-year.muted { color: var(--muted); }
+    .timeline-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 40px 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    footer p { font-size: 13px; color: var(--muted); }
+    footer a { color: var(--teal); text-decoration: none; font-size: 13px; }
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .why .container { grid-template-columns: 1fr; gap: 40px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .pricing-cards { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; padding: 32px 20px; }
+      .timeline-track { flex-direction: column; align-items: center; gap: 40px; }
+      .timeline-track::before { top: 0; bottom: 0; left: 50%; right: auto; width: 2px; height: auto; }
+    }
+  </style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="16" r="14" stroke="#00D4B4" stroke-width="2.5"/>
+      <path d="M8 20 L12 13 L16 17 L20 11 L24 15" stroke="#00D4B4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    MacroMicro
+  </div>
+  <a href="#offer" class="nav-cta">立即鎖定優惠</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge"><span class="badge-dot"></span>2026 年 6 月正式上線</div>
+  <h1>財經M平方<br><em>進入 AI 新紀元</em></h1>
+  <p class="sub">十年前，我們打造亞洲首家總經投資平台。<br>現在，我們要打造首家整合總經、產業、公司的 AI 決策平台。<br>十年積累，全面進化。</p>
+  <div class="hero-btns">
+    <a href="#offer" class="btn-primary">現在升級，鎖定今日價格</a>
+    <a href="#how" class="btn-ghost">了解新功能</a>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><strong>600萬+</strong><span>月活躍用戶</span></div>
+    <div class="stat"><strong>3億筆</strong><span>項經濟指標</span></div>
+    <div class="stat"><strong>100,000+</strong><span>張圖表</span></div>
+    <div class="stat"><strong>10年+</strong><span>深度研究積累</span></div>
+  </div>
+</section>
+<hr class="divider" />
+
+<!-- TIMELINE SECTION -->
+<section class="timeline-section" id="timeline">
+  <div class="container">
+    <span class="section-label">✦ 進化歷程</span>
+    <h2>為甚麼加入 <em>MM AI 2.0</em>？</h2>
+    <p class="subtitle">AI 2.0 是持續進化的決策引擎，現在加入享受終身早鳥最低價</p>
+
+    <div class="timeline-track">
+      <!-- Node 1: 2025 -->
+      <div class="timeline-node">
+        <div class="timeline-dot teal"></div>
+        <div class="timeline-year muted">2025</div>
+        <div class="timeline-desc">MM AI</div>
+      </div>
+
+      <!-- Node 2: 2026 -->
+      <div class="timeline-node">
+        <div class="timeline-dot teal"></div>
+        <div class="timeline-year teal">2026</div>
+        <div class="timeline-desc">AI 2.0 登場<br>全新 MM 智能生態系</div>
+      </div>
+
+      <!-- Node 3: NEXT -->
+      <div class="timeline-node">
+        <div class="timeline-dot gold"></div>
+        <div class="timeline-year gold">NEXT</div>
+        <div class="timeline-desc">AI 持續進化<br>自動升級，無需加價</div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider" />
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <div class="container">
+    <blockquote>
+      「我們不只是在推出一個新功能——<br>
+      我們正在宣告，<em>財經M平方正式進入 AI 時代</em>。<br><br>
+      AI 不只存在於一個入口，<br>
+      未來，每一個頁面、每一個數據點、每一次判斷，<br>
+      都將因 AI 而更聰明。」
+    </blockquote>
+    <cite>— Rachel，財經M平方創辦人</cite>
+  </div>
+</section>
+<hr class="divider" />
+
+<!-- WHY -->
+<section class="why">
+  <div class="container">
+    <div>
+      <span class="section-label">✦ Why Now</span>
+      <h2 class="section-title">十年建立信任，<br><em>下一個十年，從資訊走向決策</em></h2>
+      <p class="section-desc">
+        過去十年，M平方始終專注做好一件事：讓更多投資人<strong style="color:var(--text)">看得懂總經、用得上數據、找得到洞察</strong>。這份信任，不是靠口號建立，而是由每月 600 萬人次的選擇，一步一步累積而成。<br><br>
+        下一個十年，我們的初心不變。我們希望幫助每一位投資人，<strong style="color:var(--text)">更快看清局勢，更有依據地做出判斷，為自己的每一次決策負責</strong>。<br><br>
+        MacroMicro with AI，讓這件事有機會走得更遠。
+      </p>
+      <!-- Mission statement -->
+      <div style="margin-top:36px;padding:24px 28px;border-left:3px solid var(--teal);background:rgba(0,212,180,0.05);border-radius:0 12px 12px 0;">
+        <div style="font-size:12px;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;">我們的初心</div>
+        <p style="font-size:16px;color:var(--text);font-weight:500;line-height:1.8;">「幫助每一位投資人，更快看清局勢，<br>更有依據地做出判斷，為自己的每一次決策負責。」</p>
+        <p style="font-size:13px;color:var(--muted);margin-top:8px;">— 財經M平方，2013 – 2026</p>
+      </div>
+    </div>
+    <div class="why-visual">
+      <!-- Past -->
+      <div style="font-size:11px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px;">過去十年，我們解決了</div>
+      <div class="problem-card" style="border-color:rgba(255,255,255,0.08);">
+        <p style="color:var(--muted);">財經資訊散落，我們統整全球總經數據</p>
+      </div>
+      <div class="problem-card" style="border-color:rgba(255,255,255,0.08);margin-top:10px;">
+        <p style="color:var(--muted);">知識門檻高，我們做教育、寫研究報告</p>
+      </div>
+      <div class="problem-card" style="border-color:rgba(255,255,255,0.08);margin-top:10px;">
+        <p style="color:var(--muted);">機構與散戶資訊不對等，我們讓所有人都用得到</p>
+      </div>
+      <div class="arrow-down" style="margin:20px 0;">↓</div>
+      <!-- Future -->
+      <div style="font-size:11px;color:var(--teal);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px;">下一個十年，我們將透過 AI 快速進化</div>
+      <div class="solution-card">
+        <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:16px;">
+          十年來，M平方持續累積超過 <strong style="color:var(--text)">3 億筆總經與產業數據</strong>，建立研究團隊的分析框架，也陪伴一代又一代投資人理解世界、形成判斷。
+        </p>
+        <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:16px;">
+          這些長期積累，不只是我們走向下一個十年的基礎，更讓我們有機會透過 AI，<strong style="color:var(--text)">把複雜變清楚，把資訊真正推進到決策</strong>。
+        </p>
+        <div style="border-top:1px solid rgba(0,212,180,0.2);padding-top:14px;display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;">
+            <span style="color:var(--teal);flex-shrink:0;margin-top:2px;">✓</span>
+            <span style="color:var(--text);">3 億筆自建總經與產業數據</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;">
+            <span style="color:var(--teal);flex-shrink:0;margin-top:2px;">✓</span>
+            <span style="color:var(--text);">研究團隊十年分析框架與洞察</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;">
+            <span style="color:var(--teal);flex-shrink:0;margin-top:2px;">✓</span>
+            <span style="color:var(--text);">600 萬投資人的信任與真實需求理解</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider" />
+
+<!-- HOW -->
+<section class="how" id="how">
+  <div class="container">
+    <span class="section-label">✦ How It Works</span>
+    <h2 class="section-title">兩大旗艦功能，<em>重新定義你的投資流程</em></h2>
+    <p class="section-desc">不只是「加了AI」，而是整個體驗的智能升維。</p>
+    <div class="features-grid">
+      <!-- Feature 1: Conversational AI -->
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <h3>問就知道</h3>
+        <p>透過對話，直達M平方完整能力——數據庫、研究員 insights、分析工具，全部串聯。從一個問題出發，AI幫你解答、畫圖、甚至整合成完整報告。</p>
+        <div class="feature-tags">
+          <span class="tag">自然語言查詢</span>
+          <span class="tag">研究員洞察</span>
+          <span class="tag">自動生成報告</span>
+          <span class="tag">3億筆 指標</span>
+        </div>
+        <div class="widget-preview" style="margin-top:24px;">
+          <!-- Mode tabs -->
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;">
+            <div style="padding:6px 12px;border-radius:20px;background:rgba(0,212,180,0.15);border:1px solid rgba(0,212,180,0.4);font-size:11px;color:var(--teal);font-weight:600;">研究員觀點</div>
+            <div style="padding:6px 12px;border-radius:20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);font-size:11px;color:var(--muted);">繪製圖表</div>
+            <div style="padding:6px 12px;border-radius:20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);font-size:11px;color:var(--muted);">篩選器</div>
+            <div style="padding:6px 12px;border-radius:20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);font-size:11px;color:var(--muted);">數據牛熊關係</div>
+            <div style="padding:6px 12px;border-radius:20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);font-size:11px;color:var(--muted);">生成報告</div>
+          </div>
+          <!-- Sample questions -->
+          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:14px;">
+            <div style="padding:8px 12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:8px;font-size:12px;color:var(--muted);">美股還會漲嗎？怎麼看未來趨勢</div>
+            <div style="padding:8px 12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:8px;font-size:12px;color:var(--muted);">台灣出口數據趨勢分析</div>
+            <div style="padding:8px 12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:8px;font-size:12px;color:var(--muted);">黃金與美元的關聯性？</div>
+          </div>
+          <!-- Input bar -->
+          <div style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:10px 14px;">
+            <span style="font-size:12px;color:rgba(255,255,255,0.3);">詢問研究員觀點，例如：目前美股展望如何？</span>
+            <div style="width:28px;height:28px;border-radius:8px;background:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="#050B18" stroke-width="2.5" stroke-linecap="round"/><path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="#050B18" stroke-width="2.5" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Feature 2: Smart Dashboard -->
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>你的投資指揮中心</h3>
+        <p>自打造的智能儀表板，從基本行情到AI決策工具，一頁掌握所有你在意的市場訊號。</p>
+        <div class="feature-tags">
+          <span class="tag">自訂版面</span>
+          <span class="tag">AI 摘要</span>
+          <span class="tag">即時預警</span>
+          <span class="tag">情境分析</span>
+        </div>
+        <div class="widget-preview">
+          <div style="font-size:11px;color:var(--muted);letter-spacing:.08em;margin-bottom:10px;">核心功能</div>
+          <div class="widget-row">
+            <div class="widget-item">數據圖表</div>
+            <div class="widget-item">市場行情</div>
+            <div class="widget-item">當日短評</div>
+            <div class="widget-item">經濟日曆</div>
+          </div>
+          <div class="widget-row" style="margin-bottom:14px;">
+            <div class="widget-item">ETF 追蹤</div>
+            <div class="widget-item">新聞事件</div>
+            <div class="widget-item">事件時間軸</div>
+          </div>
+          <div style="font-size:11px;color:var(--teal);letter-spacing:.08em;margin-bottom:10px;">✦ AI 增強呈現</div>
+          <div class="widget-row" style="margin-bottom:14px;">
+            <div class="widget-item ai">AI 情緒儀表板</div>
+            <div class="widget-item ai">風險熱力圖</div>
+            <div class="widget-item ai">法說會摘要</div>
+          </div>
+          <div class="widget-row" style="margin-bottom:14px;">
+            <div class="widget-item ai">AI 報告閱讀器</div>
+            <div class="widget-item ai">當日行情解讀</div>
+          </div>
+          <div style="font-size:11px;color:#64b4ff;letter-spacing:.08em;margin-bottom:10px;">🎯 決策功能</div>
+          <div class="widget-row" style="margin-bottom:0;">
+            <div class="widget-item decision">景氣判斷儀表板</div>
+            <div class="widget-item decision">買賣時機篩選</div>
+          </div>
+          <div class="widget-row" style="margin-bottom:0;margin-top:8px;">
+            <div class="widget-item decision">投組健檢建議</div>
+            <div class="widget-item decision">異常偵測預警</div>
+            <div class="widget-item decision">決策提醒中心</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider" />
+
+<!-- OFFER -->
+<section class="offer" id="offer">
+  <div class="container">
+    <span class="section-label">✦ 限時兩大活動</span>
+    <h2 class="section-title">現在加入，<em>搶先進入 AI 新紀元</em></h2>
+    <p class="section-desc">
+      6 月正式上線前，我們準備了兩個方式讓你搶先參與。<br>無論你想鎖定價格，或成為最早的一批建設者——機會都有限。
+    </p>
+    <!-- Countdown -->
+    <div class="countdown-wrap">
+      <div class="countdown-box"><strong id="cd-days">--</strong><span>Days</span></div>
+      <div class="countdown-box"><strong id="cd-hours">--</strong><span>Hours</span></div>
+      <div class="countdown-box"><strong id="cd-mins">--</strong><span>Mins</span></div>
+      <div class="countdown-box"><strong id="cd-secs">--</strong><span>Secs</span></div>
+    </div>
+    <!-- Two Campaign Cards -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:900px;margin:0 auto;">
+      <!-- Campaign 1: Max Annual -->
+      <div class="pricing-card highlight" style="display:flex;flex-direction:column;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+          <div style="width:40px;height:40px;border-radius:10px;background:rgba(0,212,180,0.12);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:20px;">🔒</div>
+          <div>
+            <div style="font-size:11px;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;">活動 01</div>
+            <div style="font-weight:700;font-size:17px;">Max 年繳，鎖定今日價格</div>
+          </div>
+        </div>
+        <p style="color:var(--muted);font-size:14px;line-height:1.8;margin-bottom:20px;">
+          6 月上線後 Max AI 將調漲定價。<strong style="color:var(--text)">現在年繳加入，永久鎖定今日價格</strong>，並在上線當天自動升級為 Max AI，無需任何額外操作。
+        </p>
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px;">
+          <div style="font-size:12px;color:var(--muted);margin-bottom:6px;">現在年繳</div>
+          <div class="pricing-price"><sup>NT$</sup>XXX <span>/ 月起</span></div>
+          <div class="pricing-future" style="margin-top:6px;">上線後調漲 → NT$XXX / 月</div>
+        </div>
+        <ul class="pricing-features" style="margin-bottom:28px;">
+          <li>6 月自動升級 Max AI，無縫銜接</li>
+          <li>永久享有今日年繳價格</li>
+          <li>對話式 AI 分析 + 智能儀表板</li>
+          <li>AI 選股、情境分析、即時預警</li>
+          <li>研究員深度報告全開放</li>
+        </ul>
+        <a href="#" class="btn-primary" style="text-align:center;margin-top:auto;">立即年繳，鎖定價格 →</a>
+        <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:10px;">優惠截止：2026 年 X 月 X 日</p>
+      </div>
+      <!-- Campaign 2: 50 Founders -->
+      <div class="pricing-card" style="border-color:rgba(100,180,255,0.3);display:flex;flex-direction:column;position:relative;">
+        <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#4488FF,#00D4B4);color:#050b18;font-size:12px;font-weight:700;padding:4px 16px;border-radius:100px;white-space:nowrap;">僅限 50 位</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+          <div style="width:40px;height:40px;border-radius:10px;background:rgba(100,180,255,0.1);border:1px solid rgba(100,180,255,0.3);display:flex;align-items:center;justify-content:center;font-size:20px;">🚀</div>
+          <div>
+            <div style="font-size:11px;color:#64b4ff;letter-spacing:.1em;text-transform:uppercase;">活動 02</div>
+            <div style="font-weight:700;font-size:17px;">先行者招募計劃</div>
+          </div>
+        </div>
+        <p style="color:var(--muted);font-size:14px;line-height:1.8;margin-bottom:20px;">
+          我們邀請 <strong style="color:var(--text)">50 位先行者</strong>，搶先體驗 M平方 AI 全功能。<br>
+          加入後，你將獲得專屬優惠碼——召集 3 位以上朋友加入，即可獲得 <strong style="color:#64b4ff;">50 M幣（價值 NT$1,000）</strong>，可兌換未來 Token。
+        </p>
+        <!-- How it works -->
+        <div style="background:var(--bg2);border:1px solid rgba(100,180,255,0.2);border-radius:12px;padding:20px;margin-bottom:16px;">
+          <div style="font-size:12px;color:#64b4ff;margin-bottom:14px;font-weight:600;letter-spacing:.05em;">如何獲得獎勵</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="width:26px;height:26px;border-radius:50%;background:rgba(100,180,255,0.15);border:1px solid rgba(100,180,255,0.3);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#64b4ff;flex-shrink:0;">1</div>
+              <span style="font-size:13px;color:var(--text);">申請成為先行者，獲得專屬優惠碼</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="width:26px;height:26px;border-radius:50%;background:rgba(100,180,255,0.15);border:1px solid rgba(100,180,255,0.3);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#64b4ff;flex-shrink:0;">2</div>
+              <span style="font-size:13px;color:var(--text);">分享給朋友，召集 3 位以上加入</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="width:26px;height:26px;border-radius:50%;background:rgba(100,180,255,0.15);border:1px solid rgba(100,180,255,0.3);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#64b4ff;flex-shrink:0;">3</div>
+              <span style="font-size:13px;color:var(--text);">達標！解鎖 <strong style="color:#64b4ff;">50 M幣</strong>，可兌換未來 Token</span>
+            </div>
+          </div>
+        </div>
+        <!-- M幣 badge -->
+        <div style="background:linear-gradient(135deg,rgba(68,136,255,0.12),rgba(0,212,180,0.08));border:1px solid rgba(100,180,255,0.25);border-radius:10px;padding:14px 18px;margin-bottom:20px;display:flex;align-items:center;gap:14px;">
+          <div style="font-size:30px;line-height:1;">🪙</div>
+          <div>
+            <div style="font-size:15px;font-weight:700;color:var(--text);">50 M幣獎勵</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:2px;">價值 NT$1,000 · 可兌換未來 Token</div>
+          </div>
+        </div>
+        <!-- Progress bar -->
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;">
+          <div style="flex:1;height:6px;background:var(--bg2);border-radius:4px;overflow:hidden;">
+            <div style="width:46%;height:100%;background:linear-gradient(90deg,#4488FF,#00D4B4);border-radius:4px;"></div>
+          </div>
+          <span style="font-size:12px;color:var(--muted);white-space:nowrap;">剩餘 27 位</span>
+        </div>
+        <a href="#" style="display:block;text-align:center;padding:14px;border-radius:10px;background:rgba(100,180,255,0.1);border:1px solid rgba(100,180,255,0.35);color:#64b4ff;font-weight:700;font-size:15px;text-decoration:none;transition:all .2s;margin-top:auto;" onmouseover="this.style.background='rgba(100,180,255,0.18)'" onmouseout="this.style.background='rgba(100,180,255,0.1)'">申請成為先行者 →</a>
+        <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:10px;">名額有限 · 額滿即止</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 MacroMicro 財經M平方｜全球數據，AI 驅動投資決策</p>
+  <div style="display:flex;gap:24px">
+    <a href="#">隱私政策</a>
+    <a href="#">服務條款</a>
+    <a href="#">聯絡我們</a>
+  </div>
+</footer>
+
+<script>
+  // Countdown to June 1, 2026
+  const target = new Date('2026-06-01T00:00:00+08:00').getTime();
+  function updateCountdown() {
+    const now = Date.now();
+    const diff = target - now;
+    if (diff <= 0) {
+      document.getElementById('cd-days').textContent = '00';
+      document.getElementById('cd-hours').textContent = '00';
+      document.getElementById('cd-mins').textContent = '00';
+      document.getElementById('cd-secs').textContent = '00';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-days').textContent  = String(d).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-mins').textContent  = String(m).padStart(2,'0');
+    document.getElementById('cd-secs').textContent  = String(s).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+  // Smooth reveal on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.feature-card, .pricing-card, .why-visual, .timeline-node').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
