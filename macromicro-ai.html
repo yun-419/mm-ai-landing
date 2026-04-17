@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>財經M平方 × AI｜新紀元啟動</title>
+  <!-- ══ Google Tag Manager ══ -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  <!-- TODO: 將 GTM-XXXXXXX 替換為你的 GTM Container ID -->
+  <!-- ══ Google Analytics 4 (GA4) ══ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <!-- TODO: 將 G-XXXXXXXXXX 替換為你的 GA4 Measurement ID -->
+  <!-- ══ Meta Pixel (Facebook) ══ -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '0000000000000000');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=0000000000000000&ev=PageView&noscript=1"/></noscript>
+  <!-- TODO: 將 0000000000000000 替換為你的 Meta Pixel ID -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal:    #00D4B4;
+      --teal2:   #4eecd4;
+      --teal-dim: rgba(0,212,180,0.15);
+      --gold:    #8B6E3D;
+      --gold2:   #EACA78;
+      --gold3:   #B8943E;
+      --blue:    #64b4ff;
+      --bg:      #080810;
+      --bg2:     #0a0a16;
+      --bg3:     #12121e;
+      --glass:   rgba(255,255,255,0.04);
+      --glass-border: rgba(255,255,255,0.07);
+      --text:    #ffffff;
+      --muted:   #6a6a7a;
+      --muted2:  #9a9aaa;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Noto Sans TC', -apple-system, sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      overflow-x: hidden;
+      position: relative;
+    }
+    /* ── TECH GRID BACKGROUND ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(0,212,180,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,212,180,0.04) 1px, transparent 1px);
+      background-size: 70px 70px;
+    }
+    body::after {
+      content: '';
+      position: fixed; inset: 0; z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,212,180,0.06) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 15% 50%, rgba(139,110,61,0.04) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 50% at 85% 80%, rgba(139,110,61,0.03) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 30% at 70% 20%, rgba(0,212,180,0.03) 0%, transparent 50%);
+    }
+    /* Diagonal accent lines */
+    .tech-lines {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+    }
+    .tech-lines span {
+      position: absolute; display: block;
+      width: 1px; background: linear-gradient(180deg, transparent, rgba(0,212,180,0.08), transparent);
+      animation: techLine 12s linear infinite;
+    }
+    .tech-lines span:nth-child(1) { left: 10%; height: 200px; animation-delay: 0s; animation-duration: 10s; }
+    .tech-lines span:nth-child(2) { left: 30%; height: 300px; animation-delay: 3s; animation-duration: 14s; background: linear-gradient(180deg, transparent, rgba(139,110,61,0.08), transparent) !important; }
+    .tech-lines span:nth-child(3) { left: 55%; height: 150px; animation-delay: 6s; animation-duration: 11s; }
+    .tech-lines span:nth-child(4) { left: 75%; height: 250px; animation-delay: 1s; animation-duration: 13s; }
+    .tech-lines span:nth-child(5) { left: 90%; height: 180px; animation-delay: 8s; animation-duration: 9s; background: linear-gradient(180deg, transparent, rgba(139,110,61,0.06), transparent) !important; }
+    .tech-lines span:nth-child(6) { left: 45%; height: 220px; animation-delay: 5s; animation-duration: 15s; }
+    @keyframes techLine { 0% { top: -300px; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { top: 110%; opacity: 0; } }
+    body > * { position: relative; z-index: 1; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 100px 24px 100px;
+      position: relative; overflow: hidden;
+    }
+    .hero-globe {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      opacity: 0.65;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(0,212,180,0.06);
+      border: 1px solid rgba(0,212,180,0.18);
+      border-radius: 100px;
+      padding: 7px 20px; font-size: 13px; color: var(--teal);
+      margin-bottom: 36px; letter-spacing: .06em;
+      backdrop-filter: blur(10px);
+      position: relative; z-index: 2;
+    }
+    .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); animation: pulse 2s infinite; box-shadow: 0 0 8px rgba(0,212,180,0.5); }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.5)} }
+    .hero h1 {
+      font-size: clamp(44px, 7vw, 86px);
+      font-weight: 500; line-height: 1.1;
+      margin-bottom: 28px;
+      position: relative; z-index: 2;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    @keyframes gradShift { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
+    .hero p.sub {
+      font-size: clamp(15px, 1.8vw, 18px);
+      color: var(--muted2); max-width: 620px;
+      margin: 0 auto 52px;
+      position: relative; z-index: 2;
+      font-weight: 400;
+      line-height: 1.9;
+    }
+    .hero p.sub .gold-line {
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 500;
+    }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; position: relative; z-index: 2; }
+    .btn-primary {
+      background: var(--teal);
+      color: var(--bg);
+      padding: 16px 40px; border-radius: 100px;
+      font-weight: 500; font-size: 15px;
+      text-decoration: none; transition: all .3s;
+      box-shadow: 0 4px 30px rgba(0,212,180,0.25);
+      letter-spacing: .02em;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(0,212,180,0.3), 0 8px 30px rgba(139,110,61,0.15); }
+    .btn-ghost {
+      background: transparent; color: var(--muted2);
+      padding: 16px 40px; border-radius: 100px;
+      font-weight: 400; font-size: 15px;
+      text-decoration: none; border: 1px solid rgba(255,255,255,0.1);
+      transition: all .3s;
+    }
+    .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+    .stats-row {
+      margin-top: 80px;
+      display: flex; gap: 48px; flex-wrap: wrap; justify-content: center;
+      position: relative; z-index: 2;
+    }
+    .stat { text-align: center; }
+    .stat strong {
+      display: block; font-size: clamp(28px, 4vw, 48px); font-weight: 500;
+      color: var(--teal2);
+    }
+    .stat span { font-size: 12px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; font-weight: 400; }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 110px 24px; position: relative; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      display: inline-block;
+      font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 18px; font-weight: 400;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 50px);
+      font-weight: 500; line-height: 1.15; margin-bottom: 20px;
+    }
+    .section-title em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-desc { font-size: 16px; color: var(--muted2); max-width: 580px; line-height: 1.8; font-weight: 400; }
+    .divider {
+      border: none; margin: 0; height: 1px; position: relative;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 15%, rgba(255,255,255,0.18) 40%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0.18) 60%, rgba(255,255,255,0.06) 85%, transparent 100%);
+    }
+    .divider::before {
+      content: ''; position: absolute; left: 10%; right: 10%; top: -6px; height: 13px;
+      background: radial-gradient(ellipse 60% 100% at 50% 50%, rgba(255,255,255,0.06) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    /* ── GLASS CARD ── */
+    .glass {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      overflow: hidden; position: relative;
+    }
+    .glass::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,212,180,0.2), rgba(139,110,61,0.15), transparent);
+    }
+
+    /* ── HOW ── */
+    .how { background: var(--bg); }
+    .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 60px; }
+    @property --border-angle {
+      syntax: '<angle>';
+      inherits: false;
+      initial-value: 0deg;
+    }
+    .feature-card {
+      background: rgba(255,255,255,0.02);
+      border: none;
+      border-radius: 24px; padding: 40px;
+      transition: transform .4s, box-shadow .4s, background .4s;
+      position: relative; overflow: hidden;
+      --border-angle: 0deg;
+      box-shadow: inset 0 0 0 1px rgba(0,212,180,0.08);
+    }
+    /* Meteor border loop */
+    .feature-card::before {
+      content: ''; position: absolute; inset: 0; border-radius: 24px; padding: 1.5px;
+      background: conic-gradient(
+        from var(--border-angle),
+        transparent 0%,
+        transparent 65%,
+        rgba(0,212,180,0.35) 75%,
+        rgba(78,236,212,0.55) 82%,
+        rgba(234,202,120,0.7) 88%,
+        rgba(255,255,255,0.9) 91%,
+        rgba(234,202,120,0.5) 94%,
+        rgba(0,212,180,0.2) 97%,
+        transparent 100%
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: meteorBorder 12s linear infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+    @keyframes meteorBorder {
+      0% { --border-angle: 0deg; }
+      100% { --border-angle: 360deg; }
+    }
+    .feature-card::after {
+      content: ''; position: absolute; top: -120px; right: -120px;
+      width: 300px; height: 300px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,212,180,0.04) 0%, transparent 70%);
+      pointer-events: none; transition: all .4s;
+    }
+    .feature-card:hover { box-shadow: inset 0 0 0 1px rgba(0,212,180,0.25), 0 20px 60px rgba(0,212,180,0.08), 0 10px 30px rgba(0,212,180,0.04); transform: translateY(-6px) rotateX(1deg); background: rgba(0,212,180,0.06); }
+    .feature-icon {
+      width: 52px; height: 52px; border-radius: 16px;
+      background: rgba(0,212,180,0.06); border: 1px solid rgba(0,212,180,0.15);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+    }
+    .feature-icon svg { width: 24px; height: 24px; }
+    .feature-card h3 { font-size: 22px; font-weight: 500; margin-bottom: 12px; }
+    .feature-card p { color: var(--muted2); font-size: 14px; line-height: 1.8; margin-bottom: 24px; font-weight: 400; text-align: left; }
+
+    /* ── ARC SUBTITLE GLOW ── */
+    .arc-subtitle { margin: -4px auto 8px; position: relative; width: 160px; height: 38px; }
+    .arc-subtitle svg { position: absolute; top: 0; left: 0; }
+    .arc-subtitle .arc-line-1 { animation: arcGlow 2.5s ease-in-out infinite; }
+    .arc-subtitle .arc-line-2 { animation: arcGlow 2.5s ease-in-out infinite 0.4s; }
+    .arc-subtitle span { position: relative; z-index: 1; display: block; text-align: center; font-size: 12px; color: var(--teal); letter-spacing: .12em; padding-top: 12px; font-weight: 400; }
+    @keyframes arcGlow {
+      0%, 100% { opacity: 0.25; filter: drop-shadow(0 0 2px rgba(0,212,180,0.2)); }
+      50% { opacity: 0.7; filter: drop-shadow(0 0 6px rgba(0,212,180,0.5)) drop-shadow(0 0 12px rgba(78,236,212,0.3)); }
+    }
+    .feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      font-size: 11px; padding: 5px 14px; border-radius: 100px;
+      background: rgba(0,212,180,0.05); border: 1px solid rgba(0,212,180,0.12); color: var(--teal);
+      font-weight: 400;
+    }
+    .tag.gold { background: rgba(139,110,61,0.05); border-color: rgba(139,110,61,0.15); color: var(--gold2); }
+    .widget-preview {
+      margin-top: 28px; background: rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.04); border-radius: 14px; padding: 18px;
+    }
+    .widget-row { display: flex; gap: 6px; margin-bottom: 6px; flex-wrap: wrap; }
+    .widget-item {
+      flex: 1; min-width: 75px; background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05); border-radius: 8px;
+      padding: 8px 10px; font-size: 10px; color: var(--muted); text-align: center;
+      transition: border-color .3s; font-weight: 400;
+    }
+    .widget-item:hover { border-color: rgba(0,212,180,0.2); }
+
+    /* ── WHY ── */
+    .why { background: var(--bg2); }
+    .why .container { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .why-visual {
+      border-radius: 24px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(0,212,180,0.08);
+      padding: 40px;
+      backdrop-filter: blur(10px);
+      position: relative; overflow: hidden;
+    }
+    .why-visual::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,212,180,0.2), transparent);
+    }
+    .why-visual::after {
+      content: ''; position: absolute; top: -80px; right: -80px;
+      width: 250px; height: 250px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,212,180,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .problem-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px; padding: 18px 22px;
+      margin-bottom: 12px;
+      transition: transform .3s, border-color .3s;
+    }
+    .problem-card:hover { border-color: rgba(0,212,180,0.15); transform: translateX(4px); }
+    .problem-card p { color: var(--muted2); font-size: 13px; font-weight: 400; }
+    .arrow-down { text-align: center; font-size: 18px; color: var(--teal); margin: 16px 0; opacity: .6; }
+    .solution-card {
+      background: rgba(0,212,180,0.03);
+      border: 1px solid rgba(0,212,180,0.12);
+      border-radius: 14px; padding: 24px;
+    }
+
+    /* ── AI VISION ── */
+    .ai-vision { background: var(--bg); }
+    .vision-video-wrap {
+      position: relative; border-radius: 20px; overflow: hidden;
+      border: 1px solid rgba(0,212,180,0.1);
+      box-shadow: 0 8px 60px rgba(0,0,0,0.4), 0 0 80px rgba(0,212,180,0.04);
+      max-width: 800px; margin: 0 auto 64px;
+    }
+    .vision-video-wrap::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,212,180,0.3), transparent); z-index: 1;
+    }
+    .vision-video-wrap video { width: 100%; display: block; }
+    .vision-video-wrap .play-overlay {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      background: rgba(0,0,0,0.35); cursor: pointer; transition: all .3s; z-index: 2;
+    }
+    .vision-video-wrap .play-overlay:hover { background: rgba(0,0,0,0.2); }
+    .vision-video-wrap .play-overlay.hidden { opacity: 0; pointer-events: none; }
+    .vision-video-wrap .play-btn {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: rgba(0,212,180,0.9); display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 40px rgba(0,212,180,0.4);
+      transition: transform .3s;
+    }
+    .vision-video-wrap .play-overlay:hover .play-btn { transform: scale(1.1); }
+    .ai-feature-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+      max-width: 900px; margin: 0 auto;
+    }
+    .ai-feature-item {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(0,212,180,0.06);
+      border-radius: 16px; padding: 28px 24px;
+      text-align: center;
+      transition: all .4s;
+      position: relative; overflow: hidden;
+    }
+    .ai-feature-item::before {
+      content: ''; position: absolute; inset: 0; opacity: 0;
+      background: radial-gradient(ellipse at center, rgba(0,212,180,0.06) 0%, transparent 70%);
+      transition: opacity .4s;
+    }
+    .ai-feature-item:hover::before { opacity: 1; }
+    .ai-feature-item:hover { border-color: rgba(0,212,180,0.15); transform: translateY(-4px); }
+    .ai-feature-item .ai-icon {
+      width: 44px; height: 44px; border-radius: 12px; margin: 0 auto 16px;
+      background: rgba(0,212,180,0.05); border: 1px solid rgba(0,212,180,0.1);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ai-feature-item h4 { font-size: 15px; font-weight: 500; margin-bottom: 8px; color: var(--text); }
+    .ai-feature-item p { font-size: 12px; color: var(--muted2); line-height: 1.7; font-weight: 400; }
+
+    /* ── OFFER / PRICING ── */
+    .offer { background: var(--bg2); position: relative; overflow: hidden; }
+    .offer::before {
+      content: ''; position: absolute;
+      width: 800px; height: 800px; top: -200px; left: 50%; transform: translateX(-50%);
+      background: radial-gradient(ellipse at center, rgba(139,110,61,0.04) 0%, rgba(0,212,180,0.02) 40%, transparent 65%);
+      pointer-events: none;
+    }
+    .offer .container { text-align: center; position: relative; z-index: 1; }
+    .offer .section-desc { margin: 0 auto; }
+    .countdown-wrap { display: flex; justify-content: center; gap: 20px; margin: 44px 0; flex-wrap: wrap; }
+    .countdown-box {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(0,212,180,0.15);
+      border-radius: 18px; padding: 24px 36px; min-width: 110px;
+      backdrop-filter: blur(10px);
+      transition: transform .3s, border-color .3s;
+    }
+    .countdown-box:hover {
+      transform: translateY(-3px);
+      border-color: rgba(139,110,61,0.2);
+    }
+    .countdown-box strong {
+      display: block; font-size: 52px; font-weight: 500; line-height: 1;
+      color: var(--teal2);
+    }
+    .countdown-box span { font-size: 11px; color: var(--muted); letter-spacing: .12em; text-transform: uppercase; font-weight: 400; }
+    .pricing-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px; padding: 36px; text-align: left;
+      backdrop-filter: blur(12px);
+      position: relative; overflow: hidden;
+      box-shadow: 0 0 30px rgba(0,0,0,0.2), 0 0 60px rgba(0,212,180,0.04);
+      transition: transform .4s, border-color .4s;
+    }
+    .pricing-card:hover { transform: translateY(-5px); box-shadow: 0 16px 50px rgba(0,0,0,0.3), 0 0 40px rgba(139,110,61,0.05); }
+    .pricing-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(234,202,120,0.25), transparent);
+    }
+    .pricing-card.highlight {
+      border-color: rgba(234,202,120,0.25);
+      box-shadow: 0 0 40px rgba(139,110,61,0.1), 0 0 80px rgba(139,110,61,0.05), inset 0 0 30px rgba(139,110,61,0.02);
+      animation: cardGlow 4s ease-in-out infinite;
+    }
+    @keyframes cardGlow {
+      0%,100% { box-shadow: 0 0 40px rgba(139,110,61,0.1), 0 0 80px rgba(139,110,61,0.05); }
+      50% { box-shadow: 0 0 50px rgba(139,110,61,0.15), 0 0 100px rgba(139,110,61,0.08), 0 0 20px rgba(0,212,180,0.05); }
+    }
+    .pricing-card.highlight::after {
+      content: '限時優惠';
+      position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+      background: linear-gradient(90deg, var(--gold2), var(--gold));
+      color: var(--bg);
+      font-size: 11px; font-weight: 500; padding: 5px 20px; border-radius: 0 0 10px 10px;
+      letter-spacing: .05em;
+    }
+    .pricing-price {
+      font-size: 42px; font-weight: 500; line-height: 1;
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .pricing-price sup { font-size: 18px; }
+    .pricing-price span { font-size: 14px; -webkit-text-fill-color: var(--muted); }
+    .pricing-future { font-size: 13px; color: var(--muted); margin-top: 8px; text-decoration: line-through; font-weight: 400; }
+    .pricing-features { list-style: none; margin-top: 20px; }
+    .pricing-features li {
+      font-size: 13px; padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      display: flex; align-items: center; gap: 10px; color: var(--muted2);
+      font-weight: 400;
+    }
+    .pricing-features li::before { content: '\2713'; color: var(--teal); font-weight: 500; font-size: 12px; }
+
+    /* ── FLOATING CTA ── */
+    .floating-cta {
+      position: fixed; right: 0; top: 50%; transform: translateY(-50%);
+      z-index: 90; display: flex; flex-direction: column; gap: 2px;
+    }
+    .floating-cta a {
+      display: flex; align-items: center; gap: 8px;
+      padding: 14px 18px;
+      font-size: 13px; font-weight: 500; letter-spacing: .03em;
+      text-decoration: none; white-space: nowrap;
+      transition: all .3s cubic-bezier(.4,0,.2,1);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    }
+    .floating-cta a svg { flex-shrink: 0; }
+    .floating-cta .fc-subscribe {
+      background: var(--teal);
+      color: var(--bg);
+      border-radius: 10px 0 0 0;
+      border: 1px solid rgba(0,212,180,0.5);
+      border-right: none;
+      animation: ctaPulse 2.5s ease-in-out infinite;
+    }
+    @keyframes ctaPulse {
+      0%,100% { box-shadow: -4px 0 20px rgba(0,212,180,0.3); }
+      50% { box-shadow: -4px 0 35px rgba(0,212,180,0.6), 0 0 15px rgba(255,255,255,0.1); }
+    }
+    .floating-cta .fc-subscribe:hover {
+      background: var(--teal2);
+      padding-right: 26px;
+    }
+    .floating-cta .fc-video {
+      background: linear-gradient(135deg, rgba(234,202,120,0.12), rgba(139,110,61,0.08));
+      color: var(--gold2);
+      border-radius: 0 0 0 10px;
+      border: 1px solid rgba(234,202,120,0.25);
+      border-right: none;
+      animation: ctaPulseGold 3s ease-in-out infinite 1s;
+    }
+    .floating-cta .fc-video svg { stroke: var(--gold2); }
+    @keyframes ctaPulseGold {
+      0%,100% { box-shadow: -4px 0 15px rgba(234,202,120,0.08); }
+      50% { box-shadow: -4px 0 25px rgba(234,202,120,0.2), -4px 0 40px rgba(139,110,61,0.1); }
+    }
+    .floating-cta .fc-video:hover {
+      background: linear-gradient(135deg, rgba(234,202,120,0.2), rgba(139,110,61,0.12));
+      padding-right: 26px;
+    }
+    @media (max-width: 768px) {
+      .floating-cta a { padding: 10px 12px; font-size: 11px; }
+      .floating-cta a span { display: none; }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid rgba(0,212,180,0.05);
+      padding: 40px 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    footer p { font-size: 12px; color: var(--muted); font-weight: 400; }
+    footer a { color: var(--teal); text-decoration: none; font-size: 12px; opacity: .7; transition: opacity .2s; }
+    footer a:hover { opacity: 1; }
+
+    /* ── SHIMMER ── */
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    @keyframes goldGlow {
+      0%,100% { text-shadow: 0 0 8px rgba(234,202,120,0.4), 0 0 20px rgba(139,110,61,0.2); }
+      50% { text-shadow: 0 0 16px rgba(234,202,120,0.7), 0 0 40px rgba(139,110,61,0.4), 0 0 60px rgba(139,110,61,0.2); }
+    }
+    @keyframes goldDotPulse {
+      0%,100% { box-shadow: 0 0 8px rgba(139,110,61,0.3); }
+      50% { box-shadow: 0 0 20px rgba(139,110,61,0.6), 0 0 40px rgba(139,110,61,0.3); }
+    }
+
+    /* ── TIMELINE ANIMATION ── */
+    .tl-node {
+      opacity: 0;
+      transform: scale(0.3) translateY(8px);
+    }
+    .tl-node.tl-show {
+      animation: tlNodeIn 0.6s cubic-bezier(.16,1,.3,1) forwards;
+    }
+    @keyframes tlNodeIn {
+      0% { opacity: 0; transform: scale(0.3) translateY(8px); }
+      65% { opacity: 1; transform: scale(1.08) translateY(-2px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .tl-line-wrap {
+      position: absolute; top: 18px; left: 10%; right: 10%; height: 2px; z-index: 0; overflow: visible;
+    }
+    .tl-line-bg {
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, rgba(0,212,180,0.08) 0%, rgba(0,212,180,0.15) 50%, rgba(234,202,120,0.1) 100%);
+    }
+    .tl-line-progress {
+      position: absolute; top: 0; left: 0; height: 100%; width: 0%;
+      background: linear-gradient(90deg, var(--teal), var(--teal2), var(--gold2));
+      border-radius: 2px;
+      transition: none;
+    }
+    .tl-line-progress.tl-animate {
+      animation: tlLineGrow 2.2s cubic-bezier(.25,.46,.45,.94) forwards;
+    }
+    @keyframes tlLineGrow {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+    .tl-comet {
+      position: absolute; top: -3px; height: 8px; width: 60px;
+      border-radius: 8px; left: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(0,212,180,0.3) 20%, rgba(78,236,212,0.6) 50%, rgba(234,202,120,0.8) 75%, rgba(255,255,255,0.95) 100%);
+      filter: blur(1.5px);
+      box-shadow: 0 0 12px rgba(0,212,180,0.6), 0 0 24px rgba(234,202,120,0.4), 0 0 40px rgba(234,202,120,0.2);
+      opacity: 0; pointer-events: none;
+    }
+    .tl-comet.tl-animate {
+      animation: tlCometSweep 2.2s cubic-bezier(.25,.46,.45,.94) forwards;
+    }
+    @keyframes tlCometSweep {
+      0% { left: -60px; opacity: 0; }
+      5% { opacity: 1; }
+      85% { opacity: 1; }
+      100% { left: calc(100% + 10px); opacity: 0; }
+    }
+
+    /* ── ANIMATIONS ── */
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .stagger-1 { transition-delay: 0s; }
+    .stagger-2 { transition-delay: .12s; }
+    .stagger-3 { transition-delay: .24s; }
+    .stagger-4 { transition-delay: .36s; }
+
+    /* ── FLOATING DATA PARTICLES ── */
+    .particles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 1; }
+    .particles span {
+      position: absolute;
+      width: 3px; height: 3px;
+      border-radius: 50%;
+      background: var(--teal);
+      opacity: 0;
+      animation: particleFloat 8s ease-in-out infinite;
+    }
+    .particles span:nth-child(1) { left: 8%; top: 25%; animation-delay: 0s; }
+    .particles span:nth-child(2) { left: 18%; top: 65%; animation-delay: 1.5s; }
+    .particles span:nth-child(3) { right: 12%; top: 30%; animation-delay: 3s; }
+    .particles span:nth-child(4) { right: 22%; top: 70%; animation-delay: 4.5s; }
+    .particles span:nth-child(5) { left: 40%; top: 15%; animation-delay: 2s; width: 2px; height: 2px; }
+    .particles span:nth-child(6) { right: 35%; top: 80%; animation-delay: 5.5s; width: 2px; height: 2px; }
+    .particles span:nth-child(7) { left: 65%; top: 20%; animation-delay: 7s; width: 4px; height: 4px; background: var(--gold2); }
+    .particles span:nth-child(8) { left: 85%; top: 55%; animation-delay: 1s; background: var(--gold2); }
+    @keyframes particleFloat {
+      0% { opacity: 0; transform: translateY(0) scale(0.5); }
+      15% { opacity: 0.6; }
+      50% { opacity: 0.3; transform: translateY(-40px) scale(1); }
+      85% { opacity: 0.6; }
+      100% { opacity: 0; transform: translateY(-80px) scale(0.5); }
+    }
+
+    /* ── MGM MODAL ── */
+    .mgm-modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: rgba(0,0,0,0.7); backdrop-filter: blur(8px);
+      align-items: center; justify-content: center;
+    }
+    .mgm-modal-overlay.active { display: flex; }
+    .mgm-modal {
+      background: var(--bg2); border: 1px solid rgba(0,212,180,0.12);
+      border-radius: 24px; padding: 48px 40px; max-width: 520px; width: 90%;
+      position: relative; text-align: center;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.5), 0 0 60px rgba(0,212,180,0.06);
+    }
+    .mgm-modal .close-btn {
+      position: absolute; top: 16px; right: 16px;
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all .3s; color: var(--muted);
+    }
+    .mgm-modal .close-btn:hover { background: rgba(255,255,255,0.1); color: var(--text); }
+    .mgm-code-box {
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(0,0,0,0.3); border: 1px solid rgba(0,212,180,0.15);
+      border-radius: 12px; padding: 14px 18px; margin: 20px 0;
+    }
+    .mgm-code-box code {
+      flex: 1; font-size: 20px; font-weight: 500; color: var(--teal2);
+      letter-spacing: .15em; font-family: 'Courier New', monospace;
+    }
+    .mgm-code-box button {
+      background: var(--teal); color: var(--bg); border: none;
+      padding: 8px 18px; border-radius: 8px; font-size: 12px; font-weight: 500;
+      cursor: pointer; transition: all .3s; white-space: nowrap;
+    }
+    .mgm-code-box button:hover { background: var(--teal2); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .why .container { grid-template-columns: 1fr; gap: 40px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .ai-feature-grid { grid-template-columns: 1fr; }
+      .hero-globe { opacity: 0.5; }
+      footer { flex-direction: column; text-align: center; padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- TECH LINES -->
+<div class="tech-lines"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<!-- HERO -->
+<section class="hero">
+  <canvas id="globe" class="hero-globe" width="1000" height="1000"></canvas>
+  <div class="particles"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <img src="logo_%E7%B9%81%E4%B8%AD-%E6%A9%AB%E5%BC%8F%2B%E8%8B%B1.png" alt="MacroMicro 財經M平方" style="height:40px;width:auto;margin-bottom:32px;position:relative;z-index:2;" />
+  <div class="badge"><span class="badge-dot"></span>2026 年 6 月起，全面逐步開放</div>
+  <h1>財經M平方<br><em>進入 AI 新紀元</em></h1>
+  <p class="sub">十年前，我們打造亞洲首家總經投資平台<br>現在，我們要打造首家整合總經、產業、公司的 AI 決策平台<br><span class="gold-line">十年積累，全面進化</span></p>
+  <div class="hero-btns">
+    <a href="#offer" class="btn-primary">立即升級，鎖定優惠價格</a>
+    <a href="#how" class="btn-ghost">了解新功能</a>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><strong data-count="760" data-suffix="萬+">0</strong><span>用戶造訪/年</span></div>
+    <div class="stat"><strong data-count="1" data-suffix="億筆+">0</strong><span>累積數據數/年</span></div>
+    <div class="stat"><strong data-count="950" data-suffix="萬+">0</strong><span>圖表瀏覽數/月</span></div>
+    <div class="stat"><strong data-count="10" data-suffix="年+">0</strong><span>深度研究積累</span></div>
+  </div>
+</section>
+<hr class="divider" />
+
+<!-- MANIFESTO (Rachel text, no photo) -->
+<section style="background:var(--bg);padding:100px 24px;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 20% 50%,rgba(0,212,180,0.04) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at 80% 30%,rgba(139,110,61,0.03) 0%,transparent 50%);pointer-events:none;"></div>
+  <div class="container reveal" style="max-width:780px;position:relative;z-index:1;">
+    <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:24px;padding:56px 52px;backdrop-filter:blur(12px);position:relative;text-align:center;">
+      <div style="position:absolute;top:16px;left:40px;font-size:72px;font-weight:500;color:var(--gold2);line-height:1;font-family:Georgia,serif;text-shadow:0 0 20px rgba(234,202,120,0.5),0 0 40px rgba(139,110,61,0.3);pointer-events:none;">&ldquo;</div>
+      <div style="position:absolute;bottom:20px;right:30px;font-size:72px;font-weight:500;color:var(--gold2);line-height:1;font-family:Georgia,serif;text-shadow:0 0 20px rgba(234,202,120,0.5),0 0 40px rgba(139,110,61,0.3);pointer-events:none;">&rdquo;</div>
+      <blockquote style="font-size:clamp(16px,2vw,22px);font-weight:400;line-height:2;color:rgba(255,255,255,0.75);margin:0;padding-top:24px;">
+        「我們不只是在推出一個新功能——<br>
+        我們正在宣告，<em style="font-style:normal;font-weight:500;color:var(--teal2);">財經M平方正式進入 AI 時代</em>。<br><br>
+        AI 不只存在於一個入口，<br>
+        未來，每一個頁面、每一個數據點、每一次判斷，<br>
+        都將因 AI 而更聰明。」
+      </blockquote>
+      <cite style="display:inline-flex;align-items:center;gap:12px;margin-top:28px;font-size:14px;color:var(--muted2);font-style:normal;">
+        <span style="display:block;width:32px;height:1px;background:var(--teal);opacity:.5;"></span>
+        Rachel，財經M平方創辦人
+      </cite>
+    </div>
+  </div>
+</section>
+<hr class="divider" />
+
+<!-- WHY -->
+<section class="why">
+  <div class="container">
+    <div>
+      <span class="section-label">Why Now</span>
+      <h2 class="section-title">十年建立信任，<br><em>下一個十年，從資訊走向決策</em></h2>
+      <p class="section-desc">
+        過去十年，M平方始終專注做好一件事：讓更多投資人<strong style="color:var(--text)">看得懂總經、用得上數據、找得到洞察</strong>。這份信任，不是靠口號建立，而是由每年 760 萬人次的選擇，一步一步累積而成。<br><br>
+        下一個十年，我們的初心不變。我們希望幫助每一位投資人，<strong style="color:var(--text)">更快看清局勢，更有依據地做出判斷，為自己的每一次決策負責</strong>。<br><br>
+        MacroMicro with AI，讓這件事有機會走得更遠。
+      </p>
+      <div style="margin-top:36px;padding:24px 28px;border-left:3px solid var(--teal);background:rgba(0,212,180,0.05);border-radius:0 12px 12px 0;">
+        <div style="font-size:12px;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;">我們的初心</div>
+        <p style="font-size:16px;color:var(--text);font-weight:500;line-height:1.8;">「幫助每一位投資人，為自己的決策負責。」</p>
+        <p style="font-size:13px;color:var(--muted);margin-top:8px;">— 財經M平方，2013 – 2026</p>
+      </div>
+    </div>
+    <div class="why-visual">
+      <div style="font-size:11px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px;">過去十年，我們解決了</div>
+      <div class="problem-card" style="border-color:rgba(255,255,255,0.08);"><p style="color:var(--muted);">財經資訊散落，我們統整全球總經數據</p></div>
+      <div class="problem-card" style="border-color:rgba(255,255,255,0.08);margin-top:10px;"><p style="color:var(--muted);">知識門檻高，我們做教育、寫研究報告</p></div>
+      <div class="problem-card" style="border-color:rgba(255,255,255,0.08);margin-top:10px;"><p style="color:var(--muted);">機構與散戶資訊不對等，我們讓所有人都用得到</p></div>
+      <div class="arrow-down" style="margin:20px 0;">↓</div>
+      <div style="font-size:11px;color:var(--teal);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px;">下一個十年，我們將透過 AI 快速進化</div>
+      <div class="solution-card">
+        <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:16px;">十年來，M平方持續累積超過 <strong style="color:var(--text)">1 億筆總經與產業數據</strong>，建立研究團隊的分析框架，也陪伴一代又一代投資人理解世界、形成判斷。</p>
+        <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:16px;">這些長期積累，不只是我們走向下一個十年的基礎，更讓我們有機會透過 AI，<strong style="color:var(--text)">把複雜變清楚，把資訊真正推進到決策</strong>。</p>
+        <div style="border-top:1px solid rgba(0,212,180,0.2);padding-top:14px;display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;"><span style="color:var(--teal);flex-shrink:0;margin-top:2px;">&#10003;</span><span style="color:var(--text);">1 億筆自建總經與產業數據</span></div>
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;"><span style="color:var(--teal);flex-shrink:0;margin-top:2px;">&#10003;</span><span style="color:var(--text);">研究團隊十年分析框架與洞察</span></div>
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;"><span style="color:var(--teal);flex-shrink:0;margin-top:2px;">&#10003;</span><span style="color:var(--text);">760 萬投資人的信任與真實需求理解</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider" />
+
+<!-- HOW -->
+<section class="how" id="how">
+  <div class="container" style="text-align:center;">
+    <span class="section-label">How It Works</span>
+    <h2 class="section-title">兩大 AI 旗艦功能，<em>重新定義投資流程</em></h2>
+    <p class="section-desc" style="margin:0 auto 0;">不只是「加了AI」，而是整個體驗的智能升維。</p>
+    <div class="features-grid">
+      <div class="feature-card reveal stagger-1">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <h3>你的全球總經研究助理</h3>
+        <div style="margin-bottom:14px;"><span style="display:inline-block;font-size:11px;color:var(--teal);letter-spacing:.1em;padding:4px 14px;border:1px solid rgba(0,212,180,0.2);border-radius:100px;font-weight:400;">問就知道</span></div>
+        <p>透過對話，直達M平方完整能力——數據庫、研究員 insights、分析工具，全部串聯。從一個問題出發，AI幫你解答、畫圖、甚至整合成完整報告。</p>
+        <div class="feature-tags"><span class="tag">自然語言查詢</span><span class="tag">研究員洞察</span><span class="tag">自動生成報告</span><span class="tag">1億筆 指標</span></div>
+        <div class="widget-preview">
+          <div style="display:flex;gap:14px;margin-bottom:12px;font-size:10px;"><span style="color:var(--teal);">&#9679; 6 月上線</span><span style="color:var(--gold2);">&#9679; 未來陸續上線</span></div>
+          <div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:14px;">
+            <div style="padding:5px 11px;border-radius:20px;background:rgba(0,212,180,0.08);border:1px solid rgba(0,212,180,0.2);font-size:10px;color:var(--teal);font-weight:500;">研究員觀點</div>
+            <div style="padding:5px 11px;border-radius:20px;background:rgba(0,212,180,0.04);border:1px solid rgba(0,212,180,0.12);font-size:10px;color:var(--teal);">繪製圖表</div>
+            <div style="padding:5px 11px;border-radius:20px;background:rgba(0,212,180,0.04);border:1px solid rgba(0,212,180,0.12);font-size:10px;color:var(--teal);">生成報告</div>
+            <div style="padding:5px 11px;border-radius:20px;background:rgba(139,110,61,0.04);border:1px solid rgba(139,110,61,0.15);font-size:10px;color:var(--gold2);">篩選器</div>
+            <div style="padding:5px 11px;border-radius:20px;background:rgba(139,110,61,0.04);border:1px solid rgba(139,110,61,0.15);font-size:10px;color:var(--gold2);">數據牛熊關係</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:14px;">
+            <div style="padding:7px 12px;background:rgba(255,255,255,0.015);border:1px solid rgba(255,255,255,0.04);border-radius:8px;font-size:11px;color:var(--muted);">美股還會漲嗎？怎麼看未來趨勢</div>
+            <div style="padding:7px 12px;background:rgba(255,255,255,0.015);border:1px solid rgba(255,255,255,0.04);border-radius:8px;font-size:11px;color:var(--muted);">台灣出口數據趨勢分析</div>
+            <div style="padding:7px 12px;background:rgba(255,255,255,0.015);border:1px solid rgba(255,255,255,0.04);border-radius:8px;font-size:11px;color:var(--muted);">黃金與美元的關聯性？</div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.02);border:1px solid rgba(0,212,180,0.08);border-radius:10px;padding:10px 14px;">
+            <span style="font-size:11px;color:rgba(255,255,255,0.25);">詢問研究員觀點，例如：目前美股展望如何？</span>
+            <div style="width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal2));display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="var(--bg)" stroke-width="2.5" stroke-linecap="round"/><path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="var(--bg)" stroke-width="2.5" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card reveal stagger-2">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <h3>你的投資指揮中心</h3>
+        <div style="margin-bottom:14px;"><span style="display:inline-block;font-size:11px;color:var(--teal);letter-spacing:.1em;padding:4px 14px;border:1px solid rgba(0,212,180,0.2);border-radius:100px;font-weight:400;">一目了然</span></div>
+        <p>自打造的智能儀表板，從基本行情到AI決策工具，一頁掌握所有你在意的市場訊號。</p>
+        <div class="feature-tags"><span class="tag">自訂版面</span><span class="tag">AI 摘要</span><span class="tag">即時預警</span><span class="tag" style="background:rgba(255,255,255,0.03);border-color:rgba(255,255,255,0.08);color:var(--muted);">情境分析</span></div>
+        <div class="widget-preview">
+          <div style="display:flex;gap:14px;margin-bottom:12px;font-size:10px;"><span style="color:var(--teal);">&#9679; 6 月上線</span><span style="background:linear-gradient(135deg,var(--gold2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">&#9679; 未來陸續上線</span></div>
+          <div style="font-size:10px;color:var(--teal);letter-spacing:.08em;margin-bottom:8px;">核心功能</div>
+          <div class="widget-row">
+            <div class="widget-item" style="border-color:rgba(255,255,255,0.04);color:var(--muted);">數據圖表</div>
+            <div class="widget-item" style="border-color:rgba(255,255,255,0.04);color:var(--muted);">市場行情</div>
+            <div class="widget-item" style="border-color:rgba(255,255,255,0.04);color:var(--muted);">當日短評</div>
+            <div class="widget-item" style="border-color:rgba(255,255,255,0.04);color:var(--muted);">經濟日曆</div>
+          </div>
+          <div class="widget-row" style="margin-bottom:12px;">
+            <div class="widget-item" style="border-color:rgba(255,255,255,0.04);color:var(--muted);">ETF 追蹤</div>
+            <div class="widget-item" style="border-color:rgba(255,255,255,0.04);color:var(--muted);">新聞事件</div>
+            <div class="widget-item" style="border-color:rgba(255,255,255,0.04);color:var(--muted);">事件時間軸</div>
+          </div>
+          <div style="font-size:10px;letter-spacing:.08em;margin-bottom:8px;background:linear-gradient(135deg,var(--gold2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">AI 增強</div>
+          <div class="widget-row">
+            <div class="widget-item" style="border-color:rgba(255,255,255,0.04);color:var(--muted);">AI 情緒儀表板</div>
+            <div class="widget-item" style="border-color:rgba(255,255,255,0.04);color:var(--muted);">風險熱力圖</div>
+            <div class="widget-item" style="border-color:rgba(255,255,255,0.04);color:var(--muted);">法說會摘要</div>
+          </div>
+          <div class="widget-row" style="margin-bottom:12px;">
+            <div class="widget-item" style="border-color:rgba(255,255,255,0.04);color:var(--muted);">AI 報告閱讀器</div>
+            <div class="widget-item" style="border-color:rgba(255,255,255,0.04);color:var(--muted);">當日行情解讀</div>
+          </div>
+          <div style="font-size:10px;letter-spacing:.08em;margin-bottom:8px;background:linear-gradient(135deg,var(--gold2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">決策功能</div>
+          <div class="widget-row">
+            <div class="widget-item" style="border-color:rgba(255,255,255,0.04);color:var(--muted);">景氣判斷儀表板</div>
+            <div class="widget-item" style="border-color:rgba(255,255,255,0.04);color:var(--muted);">買賣時機篩選</div>
+          </div>
+          <div class="widget-row" style="margin-bottom:0;margin-top:6px;">
+            <div class="widget-item" style="border-color:rgba(255,255,255,0.04);color:var(--muted);">投組健檢建議</div>
+            <div class="widget-item" style="border-color:rgba(255,255,255,0.04);color:var(--muted);">異常偵測預警</div>
+            <div class="widget-item" style="border-color:rgba(255,255,255,0.04);color:var(--muted);">決策提醒中心</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 資料庫全面升級 (below cards) -->
+    <div class="reveal" style="margin-top:56px;text-align:center;">
+      <p style="font-size:15px;color:var(--teal);font-weight:500;margin-bottom:28px;">同時 6 月起，底層資料庫將全面升級</p>
+      <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:28px;height:28px;border-radius:50%;background:rgba(0,212,180,0.08);border:1px solid rgba(0,212,180,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--teal);"></div>
+          </div>
+          <span style="font-size:13px;color:var(--muted2);font-weight:400;">結構化數據 GDP CPI</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:28px;height:28px;border-radius:50%;background:rgba(0,212,180,0.08);border:1px solid rgba(0,212,180,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--teal);"></div>
+          </div>
+          <span style="font-size:13px;color:var(--muted2);font-weight:400;">D&amp;B、以賽亞、各大數據商</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:28px;height:28px;border-radius:50%;background:rgba(234,202,120,0.08);border:1px solid rgba(234,202,120,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--gold2);"></div>
+          </div>
+          <span style="font-size:13px;background:linear-gradient(135deg,var(--gold2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:400;">AI 全新數據</span>
+        </div>
+      </div>
+    </div>
+    <!-- Highlight CTA -->
+    <div class="reveal" style="margin-top:36px;text-align:center;position:relative;">
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:340px;height:60px;background:radial-gradient(ellipse,rgba(234,202,120,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+      <p style="font-size:18px;font-weight:500;line-height:1.6;margin:0;position:relative;">
+        <span style="color:var(--muted2);">現在加入 —</span>
+        <span style="background:linear-gradient(135deg,var(--gold2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"> 你買到的是整個 M平方，在 AI 時代的每一步進化</span>
+      </p>
+    </div>
+  </div>
+</section>
+<hr class="divider" />
+
+<!-- VISION / TIMELINE -->
+<section style="background:var(--bg2);padding:110px 24px;text-align:center;position:relative;overflow:hidden;">
+  <div style="position:absolute;width:600px;height:600px;top:-150px;right:-100px;background:radial-gradient(circle,rgba(0,212,180,0.04) 0%,transparent 65%);pointer-events:none;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <span class="section-label">進化歷程</span>
+    <h2 class="section-title reveal" style="margin-bottom:16px;">為什麼現在加入<br><em>MacroMicro AI 生態系？</em></h2>
+    <p class="section-desc reveal" style="margin:0 auto 72px;max-width:800px;white-space:nowrap;">AI 是持續進化的決策引擎，現在加入，享受終身早鳥最低價，並自動隨每一次進化升級。</p>
+    <div id="timeline-wrap" style="position:relative;max-width:900px;margin:0 auto;">
+      <div class="tl-line-wrap">
+        <div class="tl-line-bg"></div>
+        <div class="tl-line-progress" id="tl-progress"></div>
+        <div class="tl-comet" id="tl-comet"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:1;">
+        <!-- 2015 -->
+        <div class="tl-node" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:16px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--bg3);border:2px solid rgba(0,212,180,0.3);display:flex;align-items:center;justify-content:center;"><div style="width:8px;height:8px;border-radius:50%;background:rgba(0,212,180,0.5);"></div></div>
+          <div style="text-align:center;"><div style="font-size:15px;font-weight:500;color:var(--teal);margin-bottom:6px;opacity:.6;">2015</div><div style="font-size:12px;color:var(--muted);line-height:1.7;font-weight:400;">財經M平方創立<br>統整全球總經數據</div></div>
+        </div>
+        <!-- 2025 -->
+        <div class="tl-node" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:16px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--bg3);border:2px solid var(--teal);display:flex;align-items:center;justify-content:center;"><div style="width:8px;height:8px;border-radius:50%;background:var(--teal);"></div></div>
+          <div style="text-align:center;"><div style="font-size:15px;font-weight:500;color:var(--teal);margin-bottom:6px;">2025</div><div style="font-size:12px;color:var(--muted);line-height:1.7;font-weight:400;">MM AI 上線<br>對話式研究助理</div></div>
+        </div>
+        <!-- 2026 -->
+        <div class="tl-node" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:16px;">
+          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--teal2),var(--teal));box-shadow:0 0 30px rgba(0,212,180,0.35);display:flex;align-items:center;justify-content:center;margin-top:-4px;"><div style="width:12px;height:12px;border-radius:50%;background:var(--bg);"></div></div>
+          <div style="text-align:center;">
+            <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:8px;">
+              <span style="font-size:15px;font-weight:500;color:var(--teal2);">2026 年中</span>
+              <span style="display:inline-block;background:rgba(0,212,180,0.08);border:1px solid rgba(0,212,180,0.15);border-radius:6px;padding:2px 10px;font-size:10px;color:var(--teal);">現在</span>
+            </div>
+            <div style="font-size:12px;color:var(--text);line-height:1.7;font-weight:400;">AI 兩大旗艦功能上線<br>對話 AI + 智能儀表板</div>
+            <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px;">
+              <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:rgba(0,212,180,0.06);border:1.5px solid rgba(0,212,180,0.25);flex-shrink:0;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span style="font-size:11px;color:var(--teal);font-weight:400;opacity:.7;">全網站改版</span>
+            </div>
+          </div>
+        </div>
+        <!-- NEXT -->
+        <div class="tl-node" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:16px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--bg3);border:2px solid var(--gold2);display:flex;align-items:center;justify-content:center;animation:goldDotPulse 2.5s ease-in-out infinite;"><div style="width:8px;height:8px;border-radius:50%;background:var(--gold2);"></div></div>
+          <div style="text-align:center;"><div style="font-size:15px;font-weight:500;color:var(--gold2);margin-bottom:6px;animation:goldGlow 2.5s ease-in-out infinite;">NEXT</div><div style="font-size:12px;color:var(--gold2);line-height:1.7;animation:goldGlow 3s ease-in-out infinite 0.5s;font-weight:400;">全網站 with AI<br>原用戶自動升級<br>無需加價</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider" />
+
+<!-- AI VISION: SINGLE VIDEO + AI DREAM -->
+<section class="ai-vision" id="vision">
+  <div class="container" style="text-align:center;">
+    <span class="section-label">AI Vision</span>
+    <h2 class="section-title reveal">想像一下，<em>未來整個 MM 平台都有 AI</em></h2>
+    <p class="section-desc reveal" style="margin:0 auto 16px;max-width:640px;">而且，這即將要發生。</p>
+    <p class="section-desc reveal" style="margin:0 auto 56px;max-width:640px;font-size:14px;">
+      未來的 MacroMicro，不只是幾個 AI 功能的疊加。從你打開網站的那一刻起，每一張圖表、每一筆數據、每一個判斷，都將因 AI 變得更懂你。
+    </p>
+
+    <!-- Single Video -->
+    <div class="vision-video-wrap reveal">
+      <div class="play-overlay" onclick="playDemo(this)">
+        <div class="play-btn">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><polygon points="8 5 20 12 8 19" fill="var(--bg)"/></svg>
+        </div>
+      </div>
+      <video muted playsinline preload="metadata" poster="frame_001.jpg">
+        <source src="demo-ai-chat.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- AI Dream Feature Grid -->
+    <div class="ai-feature-grid">
+      <div class="ai-feature-item reveal stagger-1">
+        <div class="ai-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        </div>
+        <h4>每篇報告，AI 幫你抓重點</h4>
+        <p>打開任何一篇研究報告，AI 即時摘要核心論點、數據佐證、投資意涵，讓你 30 秒掌握精華。</p>
+      </div>
+      <div class="ai-feature-item reveal stagger-2">
+        <div class="ai-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h4>每張圖表，AI 幫你解讀</h4>
+        <p>不再只是看線型。AI 自動標注趨勢轉折、歷史對照，並生成一段白話解讀，讓數據為你說話。</p>
+      </div>
+      <div class="ai-feature-item reveal stagger-3">
+        <div class="ai-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h4>每次搜尋，AI 幫你連結</h4>
+        <p>輸入關鍵字，AI 不只找到資料，還幫你串連相關指標、報告、產業鏈，拼出完整拼圖。</p>
+      </div>
+      <div class="ai-feature-item reveal stagger-1">
+        <div class="ai-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+        </div>
+        <h4>個股、ETF、產業一站式 AI 分析</h4>
+        <p>總經產業、個股、ETF 全方面財報升級。AI 比對同業、追蹤法說會、分析財務健康度，決策有據可循。</p>
+      </div>
+      <div class="ai-feature-item reveal stagger-2">
+        <div class="ai-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>風險偵測，AI 主動提醒</h4>
+        <p>不用盯盤。AI 持續監控你的關注清單，異常波動、重大事件、關鍵數據變化，第一時間通知你。</p>
+      </div>
+      <div class="ai-feature-item reveal stagger-3">
+        <div class="ai-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        </div>
+        <h4>愈用愈懂你</h4>
+        <p>AI 學習你的投資偏好與關注領域，自動推薦最相關的圖表、報告、市場動態。你的 M平方，愈來愈像你。</p>
+      </div>
+    </div>
+
+    <p class="reveal" style="margin-top:48px;font-size:14px;color:var(--muted2);line-height:1.8;max-width:560px;margin-left:auto;margin-right:auto;">這不是遙遠的願景，而是我們正在實現的路線圖。每一次產品更新，你都將自動享有最新的 AI 進化。</p>
+  </div>
+</section>
+<hr class="divider" />
+
+<!-- OFFER -->
+<section class="offer" id="offer">
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:8px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6L12 2z" fill="var(--gold2)" opacity="0.6"/></svg>
+      <span class="section-label" style="margin-bottom:0;">限時兩大活動</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6L12 2z" fill="var(--gold2)" opacity="0.6"/></svg>
+    </div>
+    <h2 class="section-title reveal">現在加入，<em>搶先進入 AI 新紀元</em></h2>
+    <p class="section-desc reveal" style="margin:0 auto;">現在以今日價格加入 Max，未來自動升級 Max AI — 價格不變，服務持續進化。<br>這不只是訂閱，而是對未來 AI 時代的一次預購投資。</p>
+    <div class="countdown-wrap reveal">
+      <div class="countdown-box"><strong id="cd-days">--</strong><span>Days</span></div>
+      <div class="countdown-box"><strong id="cd-hours">--</strong><span>Hours</span></div>
+      <div class="countdown-box"><strong id="cd-mins">--</strong><span>Mins</span></div>
+      <div class="countdown-box"><strong id="cd-secs">--</strong><span>Secs</span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:32px;max-width:640px;margin:0 auto;">
+      <!-- Campaign 1: Max 年繳 -->
+      <div class="pricing-card highlight reveal stagger-1" style="display:flex;flex-direction:column;">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;margin-top:8px;">
+          <div style="width:40px;height:40px;border-radius:12px;background:rgba(139,110,61,0.06);border:1px solid rgba(139,110,61,0.15);display:flex;align-items:center;justify-content:center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+          <div>
+            <div style="font-size:10px;color:var(--gold2);letter-spacing:.12em;text-transform:uppercase;">活動 01</div>
+            <div style="font-weight:500;font-size:16px;">現在加入 Max 年繳，未來自動升級 Max AI</div>
+          </div>
+        </div>
+        <p style="color:var(--muted2);font-size:13px;line-height:1.8;margin-bottom:20px;font-weight:400;">
+          6 月上線後 Max AI 將調漲定價。<strong style="color:var(--text)">現在年繳加入，永久鎖定今日價格</strong>，並在上線當天自動升級為 Max AI，無需任何額外操作。
+        </p>
+        <div style="background:rgba(0,0,0,0.25);border:1px solid rgba(0,212,180,0.08);border-radius:14px;padding:20px;margin-bottom:20px;">
+          <div style="font-size:11px;color:var(--muted);margin-bottom:6px;font-weight:400;">現在年繳</div>
+          <div class="pricing-price"><sup>NT$</sup>XXX <span>/ 月起</span></div>
+          <div class="pricing-future">上線後調漲 → NT$XXX / 月</div>
+        </div>
+        <ul class="pricing-features" style="margin-bottom:28px;">
+          <li style="background:linear-gradient(135deg,var(--gold2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">未來自動體驗最新 AI 功能</li>
+          <li>總經圖表、獨家指標無限瀏覽</li>
+          <li>每週 1 篇一週盤前市場焦點盤點</li>
+          <li>每月 6 ~ 8 篇獨家分析報告</li>
+          <li>個人專屬投資儀表板</li>
+          <li>獨家運算 / 製圖 / 回測工具</li>
+          <li>千檔 ETF 策略篩選、分析比較</li>
+          <li>產業決策平台</li>
+          <li>美股財報資料庫、競爭模組</li>
+          <li>美股公司財報會議 AI 摘要</li>
+          <li>全球財經行事曆</li>
+          <li>財經行事曆同步 Apple/Google Calendar</li>
+        </ul>
+        <a href="#" style="text-align:center;margin-top:auto;display:block;border-radius:100px;padding:16px 40px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--bg);font-weight:500;font-size:15px;text-decoration:none;transition:all .3s;box-shadow:0 4px 24px rgba(139,110,61,0.25);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 32px rgba(139,110,61,0.4)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 24px rgba(139,110,61,0.25)'">搶先加入，成為 AI 進化的一份子 →</a>
+        <p style="font-size:11px;color:var(--muted);text-align:center;margin-top:10px;font-weight:400;">優惠截止：2026 年 X 月 X 日</p>
+      </div>
+      <!-- Campaign 2: 先行者招募 -->
+      <div id="mgm-card" class="pricing-card reveal" style="border-color:rgba(234,202,120,0.2);display:flex;flex-direction:column;position:relative;overflow:visible;box-shadow:0 0 40px rgba(139,110,61,0.06),0 0 80px rgba(139,110,61,0.03);">
+        <div style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,var(--gold2),var(--gold));color:var(--bg);font-size:11px;font-weight:500;padding:5px 20px;border-radius:0 0 10px 10px;white-space:nowrap;letter-spacing:.05em;">僅限 50 位</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;margin-top:8px;">
+          <div style="width:40px;height:40px;border-radius:12px;background:rgba(0,212,180,0.06);border:1px solid rgba(0,212,180,0.15);display:flex;align-items:center;justify-content:center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div>
+            <div style="font-size:10px;color:var(--teal);letter-spacing:.12em;text-transform:uppercase;">活動 02</div>
+            <div style="font-weight:500;font-size:16px;">先行者招募計劃</div>
+          </div>
+        </div>
+        <p style="color:var(--muted2);font-size:13px;line-height:1.8;margin-bottom:20px;font-weight:400;">
+          我們邀請 <strong style="color:var(--text)">50 位先行者</strong>，搶先體驗 M平方 AI 全功能。加入後，你將獲得專屬優惠碼——召集 3 位以上朋友加入，即可獲得 <strong style="color:var(--teal2);">50 M幣（價值 NT$1,000）</strong>，可兌換未來 Token。
+        </p>
+        <div style="background:rgba(0,0,0,0.25);border:1px solid rgba(0,212,180,0.08);border-radius:14px;padding:18px;margin-bottom:16px;">
+          <div style="font-size:11px;color:var(--teal);margin-bottom:12px;font-weight:500;">如何獲得獎勵</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;align-items:center;gap:10px;"><div style="width:24px;height:24px;border-radius:50%;background:rgba(0,212,180,0.06);border:1px solid rgba(0,212,180,0.15);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:var(--teal);flex-shrink:0;">1</div><span style="font-size:12px;color:var(--text);font-weight:400;">登入會員，領取專屬邀請碼</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><div style="width:24px;height:24px;border-radius:50%;background:rgba(0,212,180,0.06);border:1px solid rgba(0,212,180,0.15);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:var(--teal);flex-shrink:0;">2</div><span style="font-size:12px;color:var(--text);font-weight:400;">分享給朋友，召集 3 位朋友加入訂閱 Max 年繳（未來自動升級 Max AI）</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><div style="width:24px;height:24px;border-radius:50%;background:rgba(0,212,180,0.06);border:1px solid rgba(0,212,180,0.15);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:var(--teal);flex-shrink:0;">3</div><span style="font-size:12px;color:var(--text);font-weight:400;">達標自動發放 <strong style="color:var(--teal2);">50 M幣</strong>，可兌換未來 Token</span></div>
+          </div>
+        </div>
+        <div style="background:linear-gradient(135deg,rgba(0,212,180,0.04),rgba(0,212,180,0.02));border:1px solid rgba(0,212,180,0.1);border-radius:12px;padding:14px 16px;margin-bottom:18px;display:flex;align-items:center;gap:12px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:rgba(0,212,180,0.06);border:1px solid rgba(0,212,180,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div><div style="font-size:14px;font-weight:500;color:var(--text);">50 M幣獎勵</div><div style="font-size:11px;color:var(--muted);margin-top:2px;font-weight:400;">價值 NT$1,000 · 可兌換未來 Token</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:18px;">
+          <div style="flex:1;height:5px;background:rgba(255,255,255,0.03);border-radius:4px;overflow:hidden;"><div style="width:46%;height:100%;background:linear-gradient(90deg,var(--teal),var(--teal2));border-radius:4px;"></div></div>
+          <span style="font-size:11px;color:var(--muted);white-space:nowrap;font-weight:400;">剩餘 27 位</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:auto;">
+          <a href="#" onclick="openMgmModal();return false;" class="mgm-btn" style="display:flex;align-items:center;justify-content:center;gap:10px;padding:14px;border-radius:100px;background:rgba(0,212,180,0.06);border:1px solid rgba(0,212,180,0.2);color:var(--teal);font-weight:500;font-size:14px;text-decoration:none;transition:all .3s;" onmouseover="this.style.background='rgba(0,212,180,0.12)';this.style.borderColor='rgba(0,212,180,0.35)'" onmouseout="this.style.background='rgba(0,212,180,0.06)';this.style.borderColor='rgba(0,212,180,0.2)'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            登入會員，領取邀請碼
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MGM MODAL -->
+<div class="mgm-modal-overlay" id="mgmModal">
+  <div class="mgm-modal">
+    <div class="close-btn" onclick="closeMgmModal()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+    </div>
+
+    <!-- Step 1: Login -->
+    <div id="mgm-step1">
+      <div style="width:56px;height:56px;border-radius:16px;background:rgba(0,212,180,0.06);border:1px solid rgba(0,212,180,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <h3 style="font-size:20px;font-weight:500;margin-bottom:8px;">登入會員</h3>
+      <p style="font-size:13px;color:var(--muted2);line-height:1.7;margin-bottom:24px;font-weight:400;">登入後即可領取您的專屬邀請碼，邀請朋友一起參與 M平方 AI 的進化旅程。</p>
+      <button onclick="mgmLogin()" style="width:100%;padding:14px;border-radius:100px;background:var(--teal);border:none;color:var(--bg);font-weight:500;font-size:14px;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(0,212,180,0.25);" onmouseover="this.style.background='var(--teal2)'" onmouseout="this.style.background='var(--teal)'">登入 MacroMicro 帳號</button>
+      <p style="font-size:11px;color:var(--muted);margin-top:12px;font-weight:400;">支援 Email / Google / LINE / Facebook 登入</p>
+    </div>
+
+    <!-- Step 2: Loading -->
+    <div id="mgm-step2" style="display:none;">
+      <div style="width:48px;height:48px;border:3px solid rgba(0,212,180,0.15);border-top-color:var(--teal);border-radius:50%;margin:0 auto 20px;animation:spin 1s linear infinite;"></div>
+      <style>@keyframes spin { to { transform: rotate(360deg); } }</style>
+      <p style="font-size:14px;color:var(--muted2);font-weight:400;">驗證中...</p>
+    </div>
+
+    <!-- Step 3: Success -->
+    <div id="mgm-step3" style="display:none;">
+      <div style="width:56px;height:56px;border-radius:50%;background:rgba(0,212,180,0.1);border:1px solid rgba(0,212,180,0.2);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3 style="font-size:20px;font-weight:500;margin-bottom:12px;">歡迎加入 AI 進化之旅</h3>
+      <p style="font-size:13px;color:var(--muted2);line-height:1.8;margin-bottom:8px;font-weight:400;">
+        從這一刻起，你不只是 M平方的用戶——<br>你是我們邁向 AI 時代的共同參與者。<br>
+        每一次產品進化，你都將第一個體驗。
+      </p>
+      <p style="font-size:12px;color:var(--teal);margin-bottom:20px;font-weight:400;">你的專屬邀請碼</p>
+      <div class="mgm-code-box">
+        <code id="mgmCode">MM-AI-XXXX</code>
+        <button onclick="copyCode()">一鍵複製</button>
+      </div>
+      <div style="background:rgba(0,0,0,0.2);border:1px solid rgba(255,255,255,0.04);border-radius:12px;padding:16px;margin-top:16px;text-align:left;">
+        <div style="font-size:11px;color:var(--teal);margin-bottom:10px;font-weight:500;">活動規則</div>
+        <div style="font-size:12px;color:var(--muted2);line-height:1.8;font-weight:400;">
+          1. 分享邀請碼給朋友<br>
+          2. 朋友使用邀請碼加入 Max 年繳<br>
+          3. 累計 3 位朋友成功加入，自動獲得 50 M幣<br>
+          4. M幣可兌換未來 Token，或折抵訂閱費用
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 MacroMicro 財經M平方｜全球數據，AI 驅動投資決策</p>
+  <div style="display:flex;gap:24px">
+    <a href="#">隱私政策</a>
+    <a href="#">服務條款</a>
+    <a href="#">聯絡我們</a>
+  </div>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta">
+  <a href="#offer" class="fc-subscribe">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+    <span>搶先訂閱</span>
+  </a>
+  <a href="#mgm-card" class="fc-video">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6L12 2z"/></svg>
+    <span>領取獎勵</span>
+  </a>
+</div>
+
+<script>
+/* ══ GLOBE ══ */
+(function() {
+  var canvas = document.getElementById('globe');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W = canvas.width, H = canvas.height;
+  var cx = W / 2, cy = H / 2, R = W / 2 - 60;
+  var rot = 0;
+
+  function isL(lat, lon) {
+    if(lat>48&&lat<72&&lon>-168&&lon<-55)return 1;
+    if(lat>25&&lat<48&&lon>-130&&lon<-65)return 1;
+    if(lat>15&&lat<32&&lon>-118&&lon<-86)return 1;
+    if(lat>55&&lat<72&&lon>-170&&lon<-140)return 1;
+    if(lat>60&&lat<83&&lon>-60&&lon<-20)return 1;
+    if(lat>-10&&lat<13&&lon>-82&&lon<-35)return 1;
+    if(lat>-25&&lat<-10&&lon>-72&&lon<-35)return 1;
+    if(lat>-40&&lat<-25&&lon>-70&&lon<-48)return 1;
+    if(lat>-55&&lat<-40&&lon>-75&&lon<-63)return 1;
+    if(lat>36&&lat<48&&lon>-10&&lon<30)return 1;
+    if(lat>45&&lat<58&&lon>-5&&lon<25)return 1;
+    if(lat>55&&lat<72&&lon>4&&lon<32)return 1;
+    if(lat>50&&lat<59&&lon>-8&&lon<2)return 1;
+    if(lat>15&&lat<38&&lon>-18&&lon<40)return 1;
+    if(lat>0&&lat<15&&lon>-10&&lon<42)return 1;
+    if(lat>-15&&lat<0&&lon>10&&lon<42)return 1;
+    if(lat>-35&&lat<-15&&lon>15&&lon<35)return 1;
+    if(lat>12&&lat<37&&lon>35&&lon<60)return 1;
+    if(lat>8&&lat<30&&lon>68&&lon<90)return 1;
+    if(lat>30&&lat<55&&lon>60&&lon<135)return 1;
+    if(lat>20&&lat<30&&lon>98&&lon<122)return 1;
+    if(lat>31&&lat<46&&lon>129&&lon<146)return 1;
+    if(lat>34&&lat<43&&lon>125&&lon<130)return 1;
+    if(lat>5&&lat<25&&lon>92&&lon<110)return 1;
+    if(lat>-8&&lat<5&&lon>95&&lon<140)return 1;
+    if(lat>5&&lat<20&&lon>117&&lon<127)return 1;
+    if(lat>55&&lat<75&&lon>32&&lon<180)return 1;
+    if(lat>50&&lat<55&&lon>40&&lon<140)return 1;
+    if(lat>-38&&lat<-12&&lon>115&&lon<152)return 1;
+    if(lat>-47&&lat<-34&&lon>166&&lon<178)return 1;
+    if(lat>-10&&lat<-1&&lon>140&&lon<152)return 1;
+    if(lat>-25&&lat<-12&&lon>43&&lon<50)return 1;
+    if(lat>22&&lat<26&&lon>120&&lon<122)return 1;
+    return 0;
+  }
+
+  var landDots = [];
+  var gridStep = 4;
+  for (var la = -80; la <= 80; la += gridStep) {
+    for (var lo = -180; lo < 180; lo += gridStep) {
+      if (isL(la, lo)) {
+        landDots.push({ lat: la, lon: lo, sz: 1.2 + Math.random() * 0.8 });
+      }
+    }
+  }
+
+  for (var la2 = -80; la2 <= 80; la2 += 3) {
+    var lonSt = 3 / Math.max(Math.cos(la2 * Math.PI / 180), 0.2);
+    for (var lo2 = -180; lo2 < 180; lo2 += lonSt) {
+      if (isL(la2, lo2) && Math.random() > 0.35) {
+        landDots.push({
+          lat: la2 + (Math.random() - 0.5) * 1.5,
+          lon: lo2 + (Math.random() - 0.5) * 1.5,
+          sz: 0.6 + Math.random() * 1.0
+        });
+      }
+    }
+  }
+
+  var hubs = [
+    {lat:40.7,lon:-74,s:4},{lat:51.5,lon:-0.1,s:3.5},{lat:35.7,lon:139.7,s:3.5},
+    {lat:25,lon:121.5,s:5},{lat:31.2,lon:121.5,s:3},{lat:1.3,lon:103.8,s:3},
+    {lat:22.3,lon:114.2,s:3.5},{lat:48.9,lon:2.35,s:3},{lat:-33.9,lon:151.2,s:2.5},
+    {lat:37.5,lon:127,s:3},{lat:28.6,lon:77.2,s:2.5},{lat:19.4,lon:-99.1,s:2.5}
+  ];
+  var conns = [[0,1],[0,2],[3,2],[3,4],[3,6],[1,7],[5,3],[9,2],[0,11],[1,10],[6,5],[8,2]];
+
+  function proj(lat, lon) {
+    var phi = lat * Math.PI / 180;
+    var lam = (lon + rot) * Math.PI / 180;
+    return {
+      x: cx + Math.cos(phi) * Math.sin(lam) * R,
+      y: cy - Math.sin(phi) * R,
+      z: Math.cos(phi) * Math.cos(lam)
+    };
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    var t = Date.now() * 0.001;
+
+    /* Dark base circle to prevent body bg patches from showing through */
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(cx, cy, R + 8, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(8,8,16,0.55)';
+    ctx.fill();
+    ctx.restore();
+
+    var glowX = cx + R * 0.35, glowY = cy - R * 0.25;
+    var atm = ctx.createRadialGradient(glowX, glowY, R * 0.1, cx, cy, R * 1.15);
+    atm.addColorStop(0, 'rgba(0,180,220,0.06)');
+    atm.addColorStop(0.3, 'rgba(0,212,180,0.03)');
+    atm.addColorStop(0.5, 'rgba(234,202,120,0.015)');
+    atm.addColorStop(0.8, 'rgba(20,60,120,0.01)');
+    atm.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = atm;
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(cx, cy, R * 1.15, 0, Math.PI * 2);
+    ctx.clip();
+    ctx.fillRect(cx - R * 1.15, cy - R * 1.15, R * 2.3, R * 2.3);
+    ctx.restore();
+
+    /* Outer ring: gold gradient */
+    ctx.save();
+    ctx.shadowColor = 'rgba(234,202,120,0.2)';
+    ctx.shadowBlur = 50;
+    var ringGrad = ctx.createLinearGradient(cx - R, cy - R, cx + R, cy + R);
+    ringGrad.addColorStop(0, 'rgba(234,202,120,0.18)');
+    ringGrad.addColorStop(0.3, 'rgba(139,110,61,0.12)');
+    ringGrad.addColorStop(0.5, 'rgba(234,202,120,0.2)');
+    ringGrad.addColorStop(0.7, 'rgba(139,110,61,0.1)');
+    ringGrad.addColorStop(1, 'rgba(234,202,120,0.15)');
+    ctx.strokeStyle = ringGrad;
+    ctx.lineWidth = 1.8;
+    ctx.beginPath();
+    ctx.arc(cx, cy, R, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.restore();
+
+    for (var gla = -75; gla <= 75; gla += 15) {
+      ctx.beginPath();
+      var s = false;
+      for (var glo = -180; glo <= 180; glo += 2) {
+        var gp = proj(gla, glo);
+        if (gp.z > -0.02) {
+          var ga = Math.max(0, (gp.z + 0.02) * 0.7) * 0.12;
+          ctx.strokeStyle = 'rgba(80,180,220,' + ga + ')';
+          ctx.lineWidth = 0.5;
+          if (!s) { ctx.moveTo(gp.x, gp.y); s = true; }
+          else ctx.lineTo(gp.x, gp.y);
+        } else {
+          if (s) ctx.stroke();
+          ctx.beginPath(); s = false;
+        }
+      }
+      if (s) ctx.stroke();
+    }
+
+    for (var glo2 = 0; glo2 < 360; glo2 += 15) {
+      ctx.beginPath();
+      var s2 = false;
+      for (var gla2 = -90; gla2 <= 90; gla2 += 2) {
+        var gp2 = proj(gla2, glo2);
+        if (gp2.z > -0.02) {
+          var ga2 = Math.max(0, (gp2.z + 0.02) * 0.7) * 0.1;
+          ctx.strokeStyle = 'rgba(80,180,220,' + ga2 + ')';
+          ctx.lineWidth = 0.5;
+          if (!s2) { ctx.moveTo(gp2.x, gp2.y); s2 = true; }
+          else ctx.lineTo(gp2.x, gp2.y);
+        } else {
+          if (s2) ctx.stroke();
+          ctx.beginPath(); s2 = false;
+        }
+      }
+      if (s2) ctx.stroke();
+    }
+
+    for (var di = 0; di < landDots.length; di++) {
+      var dd = landDots[di];
+      var dp = proj(dd.lat, dd.lon);
+      if (dp.z > 0.05) {
+        var alpha = dp.z * 0.5;
+        var radius = dd.sz * (0.4 + dp.z * 0.6);
+        /* Mix gold gradient into ~35% of dots */
+        var goldPhase = Math.sin(t * 0.4 + di * 0.2) * 0.5 + 0.5;
+        if (di % 3 === 0) {
+          var gr = Math.round(234 - goldPhase * 50);
+          var gg = Math.round(202 - goldPhase * 54);
+          var gb = Math.round(120 - goldPhase * 58);
+          ctx.fillStyle = 'rgba(' + gr + ',' + gg + ',' + gb + ',' + (alpha * 0.85) + ')';
+          radius *= 1.1;
+        } else if (di % 7 === 0) {
+          ctx.fillStyle = 'rgba(184,148,62,' + (alpha * 0.7) + ')';
+        } else {
+          ctx.fillStyle = 'rgba(160,220,240,' + alpha + ')';
+        }
+        ctx.beginPath();
+        ctx.arc(dp.x, dp.y, radius, 0, Math.PI * 2);
+        ctx.fill();
+        /* Add subtle gold glow for gold dots */
+        if (di % 3 === 0 && dp.z > 0.4) {
+          ctx.fillStyle = 'rgba(234,202,120,' + (alpha * 0.12) + ')';
+          ctx.beginPath();
+          ctx.arc(dp.x, dp.y, radius * 2.5, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+    }
+
+    for (var ci = 0; ci < conns.length; ci++) {
+      var ha = hubs[conns[ci][0]], hb = hubs[conns[ci][1]];
+      var pa = proj(ha.lat, ha.lon), pb = proj(hb.lat, hb.lon);
+      if (pa.z > 0.1 && pb.z > 0.1) {
+        var ca = Math.min(pa.z, pb.z) * 0.18;
+        ctx.strokeStyle = 'rgba(0,212,180,' + ca + ')';
+        ctx.lineWidth = 0.8;
+        ctx.beginPath();
+        var mx = (pa.x + pb.x) / 2;
+        var my = (pa.y + pb.y) / 2 - 40 * Math.min(pa.z, pb.z);
+        ctx.moveTo(pa.x, pa.y);
+        ctx.quadraticCurveTo(mx, my, pb.x, pb.y);
+        ctx.stroke();
+
+        var prog = (t * 0.3 + ci * 0.5) % 1;
+        var tp = 1 - prog;
+        var ax = tp*tp*pa.x + 2*tp*prog*mx + prog*prog*pb.x;
+        var ay = tp*tp*pa.y + 2*tp*prog*my + prog*prog*pb.y;
+        ctx.fillStyle = 'rgba(0,212,180,' + (ca * 2.5) + ')';
+        ctx.beginPath();
+        ctx.arc(ax, ay, 1.5, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    for (var hi = 0; hi < hubs.length; hi++) {
+      var hub = hubs[hi];
+      var hp = proj(hub.lat, hub.lon);
+      if (hp.z > 0.05) {
+        var hAlpha = Math.min(1, hp.z + 0.1) * 0.7;
+
+        var pRad = hub.s + 4 + Math.sin(t * 1.5 + hi * 0.8) * 3;
+        ctx.strokeStyle = 'rgba(0,212,180,' + (0.1 * hAlpha) + ')';
+        ctx.lineWidth = 0.6;
+        ctx.beginPath();
+        ctx.arc(hp.x, hp.y, pRad, 0, Math.PI * 2);
+        ctx.stroke();
+
+        var hg = ctx.createRadialGradient(hp.x, hp.y, 0, hp.x, hp.y, hub.s * 3.5);
+        hg.addColorStop(0, 'rgba(0,212,180,' + (0.2 * hAlpha) + ')');
+        hg.addColorStop(1, 'rgba(0,212,180,0)');
+        ctx.fillStyle = hg;
+        ctx.fillRect(hp.x - hub.s * 4, hp.y - hub.s * 4, hub.s * 8, hub.s * 8);
+
+        ctx.fillStyle = 'rgba(180,240,255,' + (0.85 * hAlpha) + ')';
+        ctx.beginPath();
+        ctx.arc(hp.x, hp.y, hub.s * 0.55, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = 'rgba(255,255,255,' + (0.5 * hAlpha) + ')';
+        ctx.beginPath();
+        ctx.arc(hp.x, hp.y, hub.s * 0.2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    for (var pi = 0; pi < 40; pi++) {
+      var pAngle = (pi / 40) * Math.PI * 2 + t * 0.05 + pi * 0.3;
+      var pDist = R + 20 + Math.sin(t * 0.3 + pi * 0.7) * 40;
+      var px = cx + Math.cos(pAngle) * pDist;
+      var py = cy + Math.sin(pAngle) * pDist;
+      var pAlpha = 0.03 + Math.sin(t * 0.5 + pi) * 0.02;
+      if (pAlpha > 0) {
+        if (pi % 4 === 0) {
+          ctx.fillStyle = 'rgba(234,202,120,' + (pAlpha * 1.2) + ')';
+        } else {
+          ctx.fillStyle = 'rgba(100,200,240,' + pAlpha + ')';
+        }
+        ctx.beginPath();
+        ctx.arc(px, py, 0.8 + Math.random() * 0.5, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    rot += 0.08;
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ══ COUNTDOWN ══ */
+(function() {
+  const target = new Date('2026-06-01T00:00:00+08:00').getTime();
+  function tick() {
+    const diff = target - Date.now();
+    if (diff <= 0) {
+      ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = '00'; });
+      return;
+    }
+    const el = id => document.getElementById(id);
+    if (el('cd-days'))  el('cd-days').textContent  = String(Math.floor(diff / 86400000)).padStart(2, '0');
+    if (el('cd-hours')) el('cd-hours').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+    if (el('cd-mins'))  el('cd-mins').textContent  = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+    if (el('cd-secs'))  el('cd-secs').textContent  = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+/* ══ SCROLL REVEAL ══ */
+(function() {
+  const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(el => obs.observe(el));
+})();
+
+/* ══ COUNTER ANIMATION ══ */
+(function() {
+  var stats = document.querySelectorAll('.stat strong[data-count]');
+  var triggered = false;
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting && !triggered) {
+        triggered = true;
+        stats.forEach(function(el) {
+          var target = parseInt(el.dataset.count);
+          var suffix = el.dataset.suffix || '';
+          var duration = 2000;
+          var start = performance.now();
+          function step(now) {
+            var t = Math.min((now - start) / duration, 1);
+            var ease = 1 - Math.pow(1 - t, 3);
+            var val = Math.round(ease * target);
+            var num = target >= 1000 ? val.toLocaleString() : val;
+            el.textContent = num + suffix;
+            if (t < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  if (stats.length) obs.observe(stats[0].closest('.stats-row'));
+})();
+
+/* ══ PARALLAX SUBTLE ══ */
+(function() {
+  const globe = document.getElementById('globe');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (globe && y < window.innerHeight) {
+      globe.style.transform = 'translate(-50%, calc(-50% + ' + (y * 0.15) + 'px))';
+    }
+  }, { passive: true });
+})();
+
+/* ══ TIMELINE ANIMATION ══ */
+(function() {
+  var wrap = document.getElementById('timeline-wrap');
+  if (!wrap) return;
+  var nodes = wrap.querySelectorAll('.tl-node');
+  var progress = document.getElementById('tl-progress');
+  var comet = document.getElementById('tl-comet');
+  var fired = false;
+  var tlObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting && !fired) {
+        fired = true;
+        /* Start comet + line progress */
+        if (progress) progress.classList.add('tl-animate');
+        if (comet) comet.classList.add('tl-animate');
+        /* Stagger nodes: appear as comet passes */
+        nodes.forEach(function(node, i) {
+          setTimeout(function() {
+            node.classList.add('tl-show');
+          }, 300 + i * 480);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  tlObs.observe(wrap);
+})();
+
+/* ══ VIDEO DEMO PLAY ══ */
+function playDemo(overlay) {
+  var video = overlay.parentElement.querySelector('video');
+  if (video) {
+    overlay.classList.add('hidden');
+    video.play();
+    video.addEventListener('ended', function() {
+      overlay.classList.remove('hidden');
+    });
+  }
+}
+
+/* ══ MGM MODAL ══ */
+function openMgmModal() {
+  document.getElementById('mgmModal').classList.add('active');
+  document.getElementById('mgm-step1').style.display = '';
+  document.getElementById('mgm-step2').style.display = 'none';
+  document.getElementById('mgm-step3').style.display = 'none';
+}
+function closeMgmModal() {
+  document.getElementById('mgmModal').classList.remove('active');
+}
+function mgmLogin() {
+  document.getElementById('mgm-step1').style.display = 'none';
+  document.getElementById('mgm-step2').style.display = '';
+  setTimeout(function() {
+    document.getElementById('mgm-step2').style.display = 'none';
+    document.getElementById('mgm-step3').style.display = '';
+    /* Generate demo code */
+    var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    var code = 'MM-AI-';
+    for (var i = 0; i < 4; i++) code += chars.charAt(Math.floor(Math.random() * chars.length));
+    document.getElementById('mgmCode').textContent = code;
+  }, 1800);
+}
+function copyCode() {
+  var code = document.getElementById('mgmCode').textContent;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(code);
+  }
+  var btn = event.target;
+  btn.textContent = '已複製';
+  setTimeout(function() { btn.textContent = '一鍵複製'; }, 2000);
+}
+
+/* Close modal on overlay click */
+document.getElementById('mgmModal').addEventListener('click', function(e) {
+  if (e.target === this) closeMgmModal();
+});
+</script>
+</body>
+</html>
